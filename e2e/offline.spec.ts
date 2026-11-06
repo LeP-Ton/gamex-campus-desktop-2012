@@ -37,7 +37,7 @@ test('缓存版本升级会显示新版并保留既有角色存档', async ({ pa
   const currentWorker = readFileSync(workerPath, 'utf8');
   writeFileSync(
     workerPath,
-    `self.addEventListener('install',e=>{e.waitUntil(caches.open('gamex-legacy-fixture'));self.skipWaiting();});self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));`,
+    `self.addEventListener('install',e=>{e.waitUntil(caches.open('gamex-000000000000'));self.skipWaiting();});self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));`,
   );
   try {
     await page.goto('/');
@@ -63,9 +63,7 @@ test('缓存版本升级会显示新版并保留既有角色存档', async ({ pa
     expect(
       await page.evaluate(() => JSON.parse(localStorage.getItem('gamex-campus-save-v1')!).state.runId),
     ).toBe(before);
-    expect(await page.evaluate(async () => !(await caches.keys()).includes('gamex-legacy-fixture'))).toBe(
-      true,
-    );
+    expect(await page.evaluate(async () => !(await caches.keys()).includes('gamex-000000000000'))).toBe(true);
   } finally {
     writeFileSync(workerPath, currentWorker);
   }

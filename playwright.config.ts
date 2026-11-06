@@ -15,8 +15,13 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: '桌面交互', testIgnore: 'offline.spec.ts' },
+    { name: '桌面交互', testIgnore: ['offline.spec.ts', 'pages.spec.ts'] },
     { name: '生产离线', testMatch: 'offline.spec.ts', use: { baseURL: 'http://localhost:4173' } },
+    {
+      name: 'GitHub Pages',
+      testMatch: 'pages.spec.ts',
+      use: { baseURL: 'http://localhost:4273/gamex-campus-desktop-2012/' },
+    },
   ],
   webServer: [
     {
@@ -28,6 +33,13 @@ export default defineConfig({
     {
       command: 'npm run preview -- --port 4173 --strictPort',
       url: 'http://localhost:4173',
+      reuseExistingServer: !process.env.CI,
+      timeout: 20_000,
+    },
+    {
+      command:
+        'npm run preview -- --port 4273 --strictPort --outDir dist-pages --base=/gamex-campus-desktop-2012/',
+      url: 'http://localhost:4273/gamex-campus-desktop-2012/',
       reuseExistingServer: !process.env.CI,
       timeout: 20_000,
     },

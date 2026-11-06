@@ -1,4 +1,5 @@
 import type { AppId } from '../../engine/types';
+import { assetUrl } from '../../lib/assets';
 
 type IconSize = 'small' | 'medium' | 'large';
 
@@ -119,8 +120,8 @@ export function PeriodIcon({ app, size = 'medium' }: { app: AppId; size?: IconSi
     .map(Number)
     .sort((a, b) => a - b);
   const choose = (target: number) => variants[available.find((n) => n >= target) ?? available.at(-1)!];
-  const src = `/period-assets/icons/${choose(pixels)}`;
-  const retina = `/period-assets/icons/${choose(pixels * 2)}`;
+  const src = assetUrl(`period-assets/icons/${choose(pixels)}`);
+  const retina = assetUrl(`period-assets/icons/${choose(pixels * 2)}`);
   return (
     <img
       className="period-icon"

@@ -16,6 +16,7 @@ GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React
 - 历史图像与游戏资源保存在 `public/period-assets`，来源记录在 `docs/2012界面参考与素材.md`。运行时不加载第三方 CDN，新增资源需纳入生产离线缓存。
 - 真实软件和 Windows 系统图标直接使用原始资源，不以简化 SVG 或生成图代替；图标清单记录源地址、摘要和原生分辨率。ICO 按同尺寸最高色深提取，避免选到低色深兼容帧。
 - `src/components/apps/PeriodSocial.tsx`、`PeriodGames.tsx` 与 `src/period.css` 管理历史软件界面；已有游戏规则与存档兼容性保持独立。
+- 组件中的静态资源通过 `src/lib/assets.ts` 的 `assetUrl` 生成，跟随 Vite 的 BASE_URL；不要写死站点根路径。离线缓存按项目路径隔离，兼容同域多个 Pages 项目。
 
 ## 目录与运行
 
@@ -23,7 +24,9 @@ GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React
 - `src/systems`：课程、NPC、事件、竞技、结算规则。
 - `src/content`：专业、课程、NPC、事件、题库、称号数据。
 - `src/stores`：状态持久化与应用窗口。
+- `src/lib`：静态资源地址等前端基础工具。
 - `src/components`：桌面、应用和角色创建界面。
 - `src/tests`：引擎与策略测试；`e2e`：浏览器验收。
 - `npm install`、`npm run dev`；`npm run build`；`npm test`；`npm run test:e2e`。
+- `npm run build:pages` 生成项目子路径版本到 `dist-pages`；`.github/workflows/deploy.yml` 管理公开 Pages 的自动构建与发布。
 - 优先使用 `rg` 定向检索，先验证引擎再验证界面，不把构建通过当成人工验收。

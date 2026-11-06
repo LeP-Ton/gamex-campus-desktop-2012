@@ -4,6 +4,8 @@
 
 这是可操作、可存档、可完成学期结算的 Web 游戏。没有强制主线：上课、学习、开黑、聊天、恋爱、社团、兼职和休息，都在争夺同一份时间与精力。
 
+[GitHub Pages 在线游玩](https://lep-ton.github.io/gamex-campus-desktop-2012/) · [公开源码](https://github.com/LeP-Ton/gamex-campus-desktop-2012)
+
 ## 启动
 
 推荐 Node.js 20 或更新版本。
@@ -27,6 +29,19 @@ npm run preview
 ```
 
 生产版本通过 HTTPS 或 localhost 首次加载并完成资源缓存后，支持断网刷新与继续游玩。开发服务器用于开发和热更新，需要保持运行。运行不调用任何大模型或游戏后端 API。
+
+## GitHub Pages 部署
+
+仓库使用 GitHub Actions 自动发布：推送 main 中的应用或构建配置变更后，工作流会安装依赖、验证游戏规则、构建并部署 Pages，也可以在 Actions 页面手动执行。文档记录更新不会重复触发部署。工作流使用 Node.js 22。
+
+本地验证项目子路径构建：
+
+```bash
+npm run build:pages
+npm run preview -- --outDir dist-pages --base=/gamex-campus-desktop-2012/ --port 4273
+```
+
+资源地址和离线缓存跟随 Vite 的 base，支持根目录和项目子路径部署。GitHub Pages 与原 Sites 使用不同域名，浏览器本地存档各自独立；迁移进度时先从原站点的控制面板导出 JSON，再在新站点导入。
 
 ## 怎么玩
 
@@ -71,9 +86,9 @@ npm run test:e2e
 ```
 
 - Vitest：时间、成本、学习、考试、关系、事件、承诺、匹配、种子复现、存档、称号、榜单与学期结算；两个专业各跑学习、游戏、恋爱、社交、兼职、均衡和随意七种策略。
-- Playwright：角色创建、两个专业、多窗口、QQ 独立聊天、英雄选择与竞技、盒子资料、人人网、QQ空间、事件、兼职、日记、刷新恢复、完整学期、榜单、小屏布局、生产断网与缓存升级。
+- Playwright：角色创建、两个专业、多窗口、QQ 独立聊天、英雄选择与竞技、盒子资料、人人网、QQ空间、事件、兼职、日记、刷新恢复、完整学期、榜单、小屏布局、生产断网、缓存升级、GitHub 项目路径及同域缓存隔离。
 - 浏览器测试默认使用本机已安装的 Google Chrome。没有 Chrome 时，可安装 Playwright Chromium 并在 `playwright.config.ts` 中去掉 `channel: 'chrome'`。
-- `npm run test:e2e` 会先构建，再使用 5173 开发端口与 4173 生产预览端口；已有对应服务可复用。
+- `npm run test:e2e` 会构建根路径和 Pages 两个版本，再使用 5173 开发端口、4173 根路径预览和 4273 Pages 预览；已有对应服务可复用。
 - 自动化报告位于 `playwright-report/`；实际界面截图在 `artifacts/`。两者不进入源代码提交。
 
 ## 架构与扩展

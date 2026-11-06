@@ -5,6 +5,7 @@ import { useDesktop } from '../../stores/desktopStore';
 import { dateOf, clockText, weekdays, weekOf } from '../../engine/helpers';
 import { MAJORS } from '../../content/world';
 import type { AppId } from '../../engine/types';
+import { assetUrl } from '../../lib/assets';
 import { APPS, AppIcon, Avatar, Button, Icon } from '../ui';
 import { Window } from './Window';
 import { NewGame } from '../game/NewGame';
@@ -29,7 +30,7 @@ const shortcuts: AppId[] = [
 const pinned: AppId[] = ['browser', 'files', 'chat', 'games', 'gamebox'];
 
 export function WindowsFlag() {
-  return <img src="/period-assets/icons/windows-orb.png" alt="" draggable={false} />;
+  return <img src={assetUrl('period-assets/icons/windows-orb.png')} alt="" draggable={false} />;
 }
 
 export function Desktop() {
@@ -108,7 +109,7 @@ export function Desktop() {
               {!['files', 'recycle'].includes(app) && (
                 <img
                   className="shortcut-overlay"
-                  src="/period-assets/icons/shortcut-16.png"
+                  src={assetUrl('period-assets/icons/shortcut-16.png')}
                   alt=""
                   draggable={false}
                 />

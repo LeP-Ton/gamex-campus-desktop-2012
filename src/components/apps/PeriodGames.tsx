@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { assetUrl } from '../../lib/assets';
 import { useGame } from '../../stores/gameStore';
 import { useDesktop } from '../../stores/desktopStore';
 import { clockText, dateOf } from '../../engine/helpers';
@@ -20,7 +21,7 @@ function HeroPortrait({ id, className = '' }: { id: string; className?: string }
   return (
     <img
       className={`hero-portrait ${className}`}
-      src={`/period-assets/${id}.png`}
+      src={assetUrl(`period-assets/${id}.png`)}
       alt={heroOf(id).name}
       draggable={false}
     />
@@ -31,7 +32,7 @@ function ItemRow({ ids }: { ids: readonly string[] }) {
     <div className="lol-items">
       {ids.map((id, i) => (
         <span key={i} title={ITEM_NAMES[id] ?? '装备'}>
-          <img src={`/period-assets/item-${id}.png`} alt={ITEM_NAMES[id] ?? '装备'} />
+          <img src={assetUrl(`period-assets/item-${id}.png`)} alt={ITEM_NAMES[id] ?? '装备'} />
         </span>
       ))}
     </div>
@@ -137,7 +138,7 @@ export function League() {
               <time>{clockText(s.minute)}</time>
             </div>
             <div className="lol-tactical-map">
-              <img src="/period-assets/summoners-rift.svg" alt="旧版召唤师峡谷地图" />
+              <img src={assetUrl('period-assets/summoners-rift.svg')} alt="旧版召唤师峡谷地图" />
               {[...LEAGUE_HEROES.slice(0, 5), ...LEAGUE_HEROES.slice(5, 10)].map((h, i) => (
                 <div
                   key={h.id}
@@ -225,7 +226,7 @@ export function League() {
               </div>
               <ItemRow ids={champion.build} />
               <div className="lol-mini-map">
-                <img src="/period-assets/summoners-rift.svg" alt="小地图" />
+                <img src={assetUrl('period-assets/summoners-rift.svg')} alt="小地图" />
               </div>
             </div>
             <button className="lol-leave" onClick={() => send({ type: 'cancelMatch' })}>
@@ -235,7 +236,7 @@ export function League() {
         ) : match ? (
           <div className="lol-queue-screen">
             <div className="lol-rift-preview">
-              <img src="/period-assets/summoners-rift.svg" alt="召唤师峡谷" />
+              <img src={assetUrl('period-assets/summoners-rift.svg')} alt="召唤师峡谷" />
               <span>召唤师峡谷 · 5v5</span>
             </div>
             <h2>{match.phase === 'queue' ? '正在寻找对局' : '找到一场对局！'}</h2>
@@ -386,7 +387,7 @@ export function League() {
               </div>
               <h3>游戏模式</h3>
               <button className="lol-mode active-mode" onClick={() => setSetup(true)}>
-                <img src="/period-assets/summoners-rift.svg" alt="" />
+                <img src={assetUrl('period-assets/summoners-rift.svg')} alt="" />
                 <b>召唤师峡谷</b>
                 <small>经典模式 · 5v5</small>
               </button>
@@ -399,7 +400,7 @@ export function League() {
             </aside>
             <main className="lol-lobby-main">
               <div className="lol-featured">
-                <img src="/period-assets/ashe-2012.jpg" alt="2012年寒冰射手艾希原画" />
+                <img src={assetUrl('period-assets/ashe-2012.jpg')} alt="2012年寒冰射手艾希原画" />
                 <div>
                   <span>LEAGUE OF LEGENDS</span>
                   <h1>寒冰射手 · 艾希</h1>

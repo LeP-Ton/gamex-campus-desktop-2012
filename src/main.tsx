@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Desktop } from './components/desktop/Desktop';
+import { assetUrl } from './lib/assets';
 import './styles.css';
 import './period.css';
 
@@ -32,4 +33,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 // 生产版本首次加载后缓存全部静态资源，断网刷新也能继续玩；开发环境保留热更新。
 if (import.meta.env.PROD && 'serviceWorker' in navigator)
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
+  navigator.serviceWorker.register(assetUrl('sw.js'), { scope: import.meta.env.BASE_URL }).catch(() => {});
