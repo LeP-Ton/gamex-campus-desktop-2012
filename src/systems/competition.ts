@@ -98,7 +98,7 @@ export function finishMatch(s: GameState) {
   s.stats.matches++;
   if (win) s.stats.wins++;
   const reason = `战局优势 ${m.advantage}；竞技能力 ${Math.round(s.gaming)}；剩余精力 ${Math.round(s.energy)}。${m.party ? '室友默契参与了胜率计算。' : '单人匹配受到队友状态影响。'}`;
-  s.matches.push({ day: s.day, win, change, decisions: m.choices, reason });
+  s.matches.push({ day: s.day, win, change, decisions: m.choices, reason, champion: m.champion });
   s.matches = s.matches.slice(-60);
   if (m.party) {
     teammate.shared = clamp(teammate.shared + 3);
@@ -109,7 +109,7 @@ export function finishMatch(s: GameState) {
     fulfillPromises(s, 'haoran', 'gaming');
   }
   const text = `${win ? '取得胜利' : '遗憾落败'}，排位分 ${change > 0 ? '+' : ''}${change}。${win ? '每一个选择，都在影响战局。' : '复盘一下，下一局还有机会。'}`;
-  log(s, `征途战场：${text}`, '竞技');
+  log(s, `英雄联盟：${text}`, '竞技');
   notice(s, win ? 'VICTORY · 胜利' : 'DEFEAT · 失利', text, 'games');
   s.lastAction = text;
   s.match = null;

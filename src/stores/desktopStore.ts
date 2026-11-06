@@ -28,11 +28,14 @@ interface DesktopStore {
 }
 
 const dimensions: Partial<Record<AppId, [number, number]>> = {
-  chat: [760, 550],
+  chat: [285, 580],
   campus: [980, 690],
-  games: [850, 600],
+  games: [1050, 690],
   schedule: [860, 580],
-  forum: [900, 630],
+  forum: [1020, 690],
+  qzone: [1000, 690],
+  gamebox: [900, 630],
+  recycle: [720, 510],
   study: [880, 630],
   settings: [690, 550],
   grades: [850, 620],
@@ -53,7 +56,7 @@ export const useDesktop = create<DesktopStore>((set, get) => ({
       });
       return;
     }
-    const [width, height] = dimensions[app] ?? [820, 580];
+    const [width, height] = app === 'chat' && npc ? [700, 550] : (dimensions[app] ?? [820, 580]);
     const vw = typeof window === 'undefined' ? 1440 : window.innerWidth;
     const vh = typeof window === 'undefined' ? 900 : window.innerHeight;
     const offset = (get().windows.length % 4) * 22;
@@ -64,8 +67,14 @@ export const useDesktop = create<DesktopStore>((set, get) => ({
           key,
           app,
           npc,
-          x: Math.max(12, (vw - width) / 2 + offset - 40),
-          y: Math.max(16, (vh - height - 100) / 2 + offset),
+          x:
+            app === 'chat' && !npc
+              ? Math.max(12, vw - width - 25)
+              : Math.max(12, (vw - width) / 2 + offset - 40),
+          y:
+            app === 'chat' && !npc
+              ? Math.max(20, Math.min(190, vh - height - 65))
+              : Math.max(16, (vh - height - 65) / 2 + offset),
           width: Math.min(width, vw - 24),
           height: Math.min(height, vh - 100),
           z,

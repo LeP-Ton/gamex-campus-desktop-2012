@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Desktop } from './components/desktop/Desktop';
 import './styles.css';
+import './period.css';
 
 class GameErrorBoundary extends React.Component<{ children: React.ReactNode }, { error: boolean }> {
   state = { error: false };

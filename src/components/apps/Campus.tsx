@@ -287,7 +287,7 @@ export function Campus() {
                       <Icon name="chat" size={17} />
                       有人等你上线
                     </h2>
-                    <AppLink app="chat">打开 Q聊</AppLink>
+                    <AppLink app="chat">打开 QQ</AppLink>
                   </div>
                   <div className="friend-note">
                     {latest && (

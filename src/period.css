@@ -1,0 +1,7398 @@
+/* Windows 7 和 2012 年软件的结构、密度与配色，独立于游戏规则。 */
+:root {
+  font-family: Tahoma, 'Microsoft YaHei', '宋体', sans-serif;
+  color: #222;
+  font-size: 12px;
+  --line: #c7d8e5;
+  --muted: #68727c;
+}
+.windows-seven {
+  background: #0d72bd;
+}
+.windows-seven .wallpaper {
+  background: #1675bc url('/period-assets/win7-harmony.jpg') center center/cover no-repeat;
+}
+.windows-seven .desktop-shortcuts {
+  top: 10px;
+  left: 4px;
+  grid-template-rows: repeat(8, 88px);
+  grid-auto-flow: column;
+  gap: 2px 5px;
+}
+.windows-seven .desktop-shortcut {
+  width: 78px;
+  min-height: 82px;
+  padding: 5px 2px;
+  gap: 5px;
+  font:
+    12px 'Microsoft YaHei',
+    '宋体',
+    sans-serif;
+  text-shadow:
+    1px 1px 2px #001a38,
+    0 0 3px #001f46;
+  line-height: 1.4;
+}
+.windows-seven .desktop-shortcut:hover {
+  background: #c3e5ff40;
+  border-color: #c8e9ff9c;
+}
+.windows-seven .shortcut-icon-wrap > i {
+  font: 14px Arial;
+  color: #196fbc;
+  text-shadow: none;
+  background: white;
+  border: 1px solid #92a2ba;
+  width: 12px;
+  height: 12px;
+  bottom: 0;
+  left: -3px;
+}
+.app-icon {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  color: inherit;
+  width: 34px;
+  height: 34px;
+}
+.app-icon.large {
+  width: 48px;
+  height: 48px;
+}
+.app-icon.small {
+  width: 19px;
+  height: 19px;
+}
+.app-icon:after {
+  display: none !important;
+}
+.app-icon > svg {
+  width: 100% !important;
+  height: 100% !important;
+  filter: drop-shadow(0 1px 1px #23334844);
+}
+.avatar {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 1px solid #a4b4c1 !important;
+  background-image: none !important;
+  overflow: hidden;
+}
+.avatar > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.avatar:after {
+  display: none;
+}
+.aero-window {
+  border-radius: 7px;
+  padding: 0 7px 7px;
+  background: linear-gradient(120deg, #daefffb0, #7eafd67d 28%, #b6daef96 52%, #6399c578);
+  border: 1px solid #d9edffdd;
+  box-shadow:
+    0 0 0 1px #1d406fba,
+    0 10px 30px #001b395e,
+    inset 0 1px #ffffffa3;
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+.aero-window.inactive {
+  background: linear-gradient(120deg, #dcebf5d4, #b6cbdcb8);
+  border-color: #dbe8f2;
+}
+.window-titlebar {
+  height: 29px;
+  min-height: 29px;
+  font:
+    12px 'Segoe UI',
+    'Microsoft YaHei',
+    sans-serif;
+  color: #102b43;
+  text-shadow:
+    0 0 5px white,
+    0 1px 2px white;
+  gap: 5px;
+  padding-left: 2px;
+}
+.window-controls {
+  height: 20px;
+  right: -1px;
+  top: -1px;
+  border-color: #698ba8;
+  box-shadow: 0 1px 2px #ffffffb0;
+}
+.window-controls button {
+  width: 27px;
+  border-right-color: #6f95b1;
+  background: linear-gradient(#eff8ff4d, #9dc4e55e 48%, #6191b578 49%, #98bfdd78);
+  color: #163551;
+}
+.window-controls button.window-close {
+  width: 45px;
+  background: linear-gradient(#ebbdad, #d58c72 47%, #b14829 48%, #d07955);
+  text-shadow: 0 1px #81402e;
+}
+.window-surface {
+  border-color: #60819f;
+  box-shadow: 0 0 0 1px #eaf5ffb5;
+  background: white;
+}
+.aero-window.maximized {
+  height: calc(100dvh - 40px) !important;
+}
+.taskbar {
+  height: 40px;
+  background: linear-gradient(#78a3d24d, #2c54878c 45%, #153e738f 48%, #174b8b9e);
+  border-top: 1px solid #d3e8ffab;
+  box-shadow:
+    inset 0 1px #ffffff1f,
+    0 -1px #1c3d5e6b;
+  backdrop-filter: blur(13px);
+  z-index: 900;
+}
+.start-orb {
+  width: 58px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.start-orb > span {
+  width: 37px;
+  height: 37px;
+  border: 1px solid #b7dbf5;
+  box-shadow:
+    inset 0 2px 4px #f5ffffcc,
+    0 0 2px #203c66,
+    0 1px 2px #002352;
+  display: block;
+  transform: none;
+  background: radial-gradient(at 45% 30%, #9ebcf8 1%, #406bba 45%, #16497e 70%);
+  padding: 5px 5px 7px;
+}
+.start-orb svg {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 2px #fff8);
+  transform: rotate(-8deg);
+}
+.taskbar-apps {
+  gap: 3px;
+}
+.taskbar-app {
+  height: 38px;
+  width: 57px;
+  border-radius: 3px;
+}
+.taskbar-app .app-icon {
+  width: 33px;
+  height: 33px;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.taskbar-app.running {
+  border-color: #b3d8f29c;
+  box-shadow:
+    inset 0 0 0 1px #f4ffff40,
+    0 0 0 1px #16365e;
+  background: linear-gradient(#d4e8ff2b, #beddf11f);
+}
+.taskbar-app.active {
+  background: linear-gradient(#e1f5ff7a, #9ad7ff4a);
+  box-shadow:
+    inset 0 0 5px #e8faff82,
+    0 0 0 1px #1b436c;
+}
+.taskbar-app.stacked {
+  border-right-width: 4px;
+}
+.taskbar-clock {
+  width: 92px;
+  font:
+    11px Tahoma,
+    Arial;
+  gap: 4px;
+}
+.taskbar-clock b {
+  font-size: 11px;
+}
+.system-tray {
+  padding-left: 7px;
+  gap: 7px;
+  margin-left: auto;
+}
+.system-tray button {
+  padding: 2px;
+  color: white;
+}
+.input-language {
+  font: 12px Arial;
+}
+.win-network {
+  font-size: 11px;
+  letter-spacing: -2px;
+}
+.show-desktop {
+  height: 40px;
+  width: 14px;
+  background: linear-gradient(90deg, #e4f6ff1c, #bddffa61);
+  border-color: #cfebff69;
+}
+.unread-badge {
+  font-family: Tahoma;
+  font-size: 9px;
+  background: #db572d;
+  border-color: #ffe7ba;
+  box-shadow: 0 1px 2px #003b66;
+}
+.task-unread {
+  font-size: 8px;
+  right: 4px;
+  top: 1px;
+  background: #cb552a;
+}
+.win-sticky-note {
+  position: absolute;
+  z-index: 2;
+  left: 188px;
+  top: 35px;
+  width: 233px;
+  min-height: 225px;
+  background: linear-gradient(#fff3a6, #fff5b5 45%, #fff7c9);
+  box-shadow: 3px 5px 7px #00285863;
+  padding: 0 15px 13px;
+  color: #625529;
+  transform: rotate(-1.2deg);
+  font:
+    13px 'KaiTi',
+    '楷体',
+    'Microsoft YaHei',
+    serif;
+}
+.win-sticky-note > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 -15px;
+  padding: 6px 9px;
+  background: #d4bf6a22;
+  font-family: Tahoma;
+  color: #998951;
+}
+.win-sticky-note > div > b {
+  font-family: 'KaiTi', '楷体', serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.win-sticky-note > div > button {
+  margin-left: auto;
+  font-size: 14px;
+  padding: 0;
+}
+.win-sticky-note > p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 12px 0 9px;
+  color: #5c5028;
+}
+.win-sticky-note dl {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+.win-sticky-note dd {
+  margin: 0;
+}
+.win-sticky-note dt {
+  color: #9b884c;
+}
+.win-sticky-note footer {
+  display: flex;
+  gap: 13px;
+  justify-content: flex-end;
+  margin-top: 12px;
+  border-top: 1px dashed #d4bd6d;
+  padding-top: 9px;
+}
+.win-sticky-note footer button {
+  font:
+    12px 'KaiTi',
+    '楷体',
+    serif;
+  color: #82703a;
+  padding: 0;
+  text-decoration: underline;
+}
+.win-clock-gadget {
+  position: absolute;
+  right: 91px;
+  top: 20px;
+  color: white;
+  font: 11px Tahoma;
+  text-align: center;
+  text-shadow: 0 1px 3px #00407b;
+  z-index: 2;
+}
+.analog-clock {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: radial-gradient(#fff 50%, #dce5ed 70%, #aac4db 71%, #f7ffff 75%, #6d93bb 79%);
+  box-shadow:
+    0 3px 9px #00326488,
+    inset 0 1px 4px #ffffffb3;
+  border: 1px solid #496985;
+  position: relative;
+  margin-bottom: 9px;
+}
+.analog-clock > i {
+  position: absolute;
+  width: 2px;
+  height: 7px;
+  background: #728596;
+  top: 9px;
+  left: 60px;
+  transform-origin: 1px 52px;
+}
+.analog-clock > span {
+  position: absolute;
+  width: 4px;
+  background: #36536b;
+  bottom: 60px;
+  left: 59px;
+  transform-origin: 50% 100%;
+  border-radius: 2px;
+}
+.analog-clock > .hour-hand {
+  height: 31px;
+}
+.analog-clock > .minute-hand {
+  height: 43px;
+  width: 3px;
+  background: #728a9f;
+  left: 59.5px;
+}
+.analog-clock > b {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #526b82;
+  top: 57px;
+  left: 57px;
+}
+.start-menu {
+  bottom: 40px;
+  width: 412px;
+  min-height: 500px;
+  background: linear-gradient(120deg, #8bb1d8dd, #264e7ae6);
+  border-color: #b1d5f2;
+  border-radius: 6px 6px 0 0;
+  padding: 7px;
+  box-shadow:
+    0 0 0 1px #1e3e64,
+    0 -6px 25px #001b3c75;
+  z-index: 910;
+  backdrop-filter: blur(15px);
+}
+.start-apps {
+  width: 253px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-color: #617c98;
+  min-width: 0;
+}
+.start-program-list {
+  max-height: 420px;
+  overflow: auto;
+  scrollbar-width: thin;
+  flex: 1;
+}
+.start-program-list > button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 7px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #162433;
+  min-height: 44px;
+}
+.start-program-list > button:hover {
+  border-color: #b7d8f0;
+  background: linear-gradient(#f0f8ff, #d8ebfa);
+  box-shadow: inset 0 0 0 1px white;
+}
+.start-program-list > button > span:last-child {
+  min-width: 0;
+}
+.start-program-list small {
+  display: none;
+  color: #73859b;
+  font-size: 9px;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.start-program-list .app-icon {
+  width: 30px;
+  height: 30px;
+}
+.all-programs {
+  font-size: 12px;
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #e0e7ed;
+  border-bottom: 1px solid #e0e7ed;
+  margin-top: 3px;
+  width: 100%;
+  color: #22374e;
+}
+.start-search {
+  position: relative;
+  border: 0;
+  padding: 10px 4px 4px;
+  margin: 0;
+}
+.start-search input {
+  border: 1px solid #a7bfd5;
+  padding: 6px 25px 6px 7px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #333;
+  border-radius: 0;
+}
+.start-search > svg {
+  right: 11px;
+  left: auto;
+  top: 15px;
+  color: #577590;
+}
+.start-right {
+  padding: 15px 7px 5px 12px;
+  gap: 3px;
+  color: #f1f7ff;
+  min-width: 138px;
+}
+.start-right > .avatar {
+  align-self: center;
+  width: 54px;
+  height: 54px;
+  margin-top: -35px;
+  border: 3px solid #dbecf9 !important;
+  border-radius: 5px !important;
+  box-shadow:
+    0 0 0 1px #3b5e83,
+    0 2px 4px #153958 !important;
+}
+.start-right > button {
+  font-size: 12px;
+  padding: 9px 5px;
+  font-weight: 400;
+}
+.start-right .start-username {
+  padding: 11px 5px 8px;
+  font-weight: 600;
+}
+.start-right > hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #1d436d85;
+  border-bottom: 1px solid #a8c9e34f;
+  margin: 6px 0;
+}
+.start-shutdown {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+.start-shutdown button {
+  background: linear-gradient(#c6d9ec99, #6a8aac99 50%, #48698e99 51%, #80a2c499);
+  color: white;
+  border: 1px solid #b9d4eac9;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 0 0 1px #23476e;
+  text-shadow: 0 1px #1d466b;
+  padding: 6px 17px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.start-shutdown button + button {
+  padding: 7px 6px;
+  font-size: 10px;
+  border-radius: 0 3px 3px 0;
+}
+.desktop-notification {
+  background: linear-gradient(#f7fcff, #e7f4fb);
+  border: 1px solid #617a91;
+  border-radius: 6px;
+  box-shadow: 2px 3px 7px #001a3a55;
+  bottom: 53px;
+  right: 37px;
+  width: 300px;
+}
+.desktop-notification:after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  right: 23px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #e7f4fb;
+}
+.desktop-notification > div {
+  font:
+    12px 'Microsoft YaHei',
+    sans-serif;
+  color: #1b3e5c;
+  padding: 10px 11px 2px;
+}
+.desktop-notification .notification-body {
+  font:
+    12px/1.7 'Microsoft YaHei',
+    sans-serif;
+  color: #283d4f;
+  padding: 7px 13px;
+}
+.desktop-notification > small {
+  font: 10px Tahoma;
+  color: #7e94a7;
+}
+.system-toast {
+  font: 12px Tahoma;
+  color: #1c3c56;
+  background: #edf8ff;
+  border-color: #7796b3;
+  bottom: 57px;
+  border-radius: 3px;
+}
+.context-dismiss {
+  position: absolute;
+  inset: 0;
+  z-index: 902;
+}
+.win-context-menu {
+  position: absolute;
+  z-index: 903;
+  width: 200px;
+  background: #f0f0f0;
+  border: 1px solid #8c9eaf;
+  box-shadow: 2px 2px 4px #14365d66;
+  padding: 3px;
+  color: #222;
+}
+.win-context-menu > button {
+  width: 100%;
+  padding: 7px 10px 7px 31px;
+  text-align: left;
+  font:
+    12px '宋体',
+    sans-serif;
+  border: 1px solid transparent;
+}
+.win-context-menu > button:hover {
+  background: #deedf9;
+  border-color: #b6d7ed;
+}
+.win-context-menu > hr {
+  border: 0;
+  border-top: 1px solid #c9ced3;
+  margin: 4px 3px 4px 28px;
+}
+.button {
+  border-radius: 2px;
+  color: #111;
+  border-color: #8399ac;
+  background: linear-gradient(#fff, #e4eaf0);
+  box-shadow: inset 0 0 0 1px #ffffffab;
+  font:
+    12px '宋体',
+    sans-serif;
+  min-height: 25px;
+  padding: 5px 13px;
+}
+.button.primary {
+  color: #111;
+  text-shadow: none;
+  border-color: #3c7ead;
+  background: linear-gradient(#eff9ff, #c9e6f8);
+  box-shadow: inset 0 0 0 1px white;
+}
+.button.primary:hover {
+  background: linear-gradient(#eaf8ff, #b7dcf6);
+  border-color: #2478ad;
+}
+.button:disabled {
+  opacity: 0.45;
+}
+.app-header {
+  background: linear-gradient(#fff, #eaf2f9);
+  border-color: #c1d4e4;
+}
+.app-header h2 {
+  color: #244d71;
+  font-size: 18px;
+}
+.app-header p {
+  color: #687f90;
+  font-size: 11px;
+}
+.app-tabs {
+  background: linear-gradient(#f7fbff, #e9f1f8);
+  border-color: #c2d4e4;
+}
+.app-tabs > button {
+  font-size: 12px;
+  color: #3e607c;
+}
+.app-tabs > button.selected {
+  color: #145085;
+  border-color: #4898c6;
+}
+.app-tabs > .push-right {
+  color: #617e96;
+  font-size: 10px;
+}
+.resource-bar {
+  font-size: 11px;
+  color: #3e6079;
+  background: #f2f7fb;
+}
+.action-feedback {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #46677f;
+  min-height: 23px;
+  background: linear-gradient(#fafcff, #e8f0f7);
+  border-color: #cad7e2;
+  padding: 5px 9px;
+}
+.action-feedback svg {
+  color: #568ab1;
+}
+.text-link {
+  color: #216a9e;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.muted {
+  color: #687b88;
+}
+.tag {
+  border-radius: 0;
+  font-size: 10px;
+}
+.app-padding {
+  padding: 20px;
+}
+.info-box {
+  border-color: #c4d9e8;
+  background: #f1f7fc;
+  color: #54768c;
+  font-size: 11px;
+}
+.progress {
+  border-radius: 0;
+}
+.data-table {
+  font-family: '宋体', sans-serif;
+}
+.data-table th {
+  font-size: 11px;
+  color: #305a77;
+  background: linear-gradient(#f8fbfd, #dce9f4);
+  border-color: #bccfdf;
+}
+.data-table td {
+  font-size: 11px;
+  color: #445d70;
+  border-color: #d8e3ec;
+}
+.app-campus {
+  background: white;
+}
+.campus-sidebar {
+  background: #edf4fb;
+  border-color: #bfd3e4;
+}
+.campus-sidebar nav > button {
+  font-size: 12px;
+  color: #3d6380;
+}
+.campus-sidebar nav > button.selected {
+  background: linear-gradient(#e1f1fc, #c8e4f9);
+  border-color: #4385b4;
+  color: #1c5b87;
+}
+.campus-profile > strong {
+  color: #295a7b;
+}
+.campus-profile > span:not(.avatar):not(.tag) {
+  font-size: 10px;
+  color: #6687a2;
+}
+.campus-main {
+  background: white;
+}
+.welcome-banner {
+  background: linear-gradient(#d9edfc, #eef7fd);
+  border: 1px solid #b8d4e8;
+  border-radius: 0;
+}
+.welcome-banner h1 {
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-weight: 400;
+  color: #215f91;
+}
+.welcome-banner p,
+.welcome-date {
+  color: #5c83a4;
+  font-size: 11px;
+}
+.campus-stats {
+  border-color: #d5e2ec;
+}
+.campus-stats strong {
+  color: #204c70;
+}
+.campus-stats small {
+  font-size: 10px;
+  color: #4c6d87;
+}
+.campus-columns .section-heading h2 {
+  font-size: 12px;
+  color: #315e7e;
+}
+.agenda-card,
+.friend-note,
+.event-preview,
+.life-card {
+  border-color: #c4d7e6;
+  border-radius: 0;
+}
+.agenda-entry strong,
+.event-preview strong,
+.friend-note strong {
+  font-size: 12px;
+  color: #315b7c;
+}
+.agenda-entry > div:nth-of-type(2) > span,
+.event-preview small,
+.friend-note small {
+  font-size: 10px;
+  color: #778fa0;
+}
+.friend-note p {
+  font-size: 11px;
+  color: #546c7e;
+}
+.life-card {
+  background: #edf5fd;
+}
+.life-card h3 {
+  color: #386584;
+}
+.life-card p {
+  color: #6c889b;
+  font-size: 11px;
+}
+.campus-sidebar .semester-mini {
+  color: #6487a1;
+}
+.campus-bottom {
+  color: #708da2;
+}
+.campus-stats .stat-icon {
+  border-radius: 0;
+}
+.recycle-empty {
+  padding: 90px 30px;
+  text-align: center;
+  color: #748da3;
+}
+.recycle-empty h3 {
+  font:
+    14px 'Microsoft YaHei',
+    sans-serif;
+  margin: 18px 0;
+}
+.recycle-empty p {
+  font-size: 12px;
+  color: #71828e;
+}
+.win-setup-backdrop {
+  background: #082d534d;
+  backdrop-filter: blur(2px);
+}
+.win-enrollment {
+  width: 760px;
+  display: block;
+  max-width: 96vw;
+  border: 1px solid #d6edff;
+  background: linear-gradient(120deg, #d4e7f6, #7ba9d7);
+  padding: 0 6px 6px;
+  border-radius: 7px;
+  box-shadow:
+    0 0 0 1px #28517b,
+    0 12px 55px #002248a1;
+  overflow: visible;
+}
+.setup-title {
+  height: 30px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 0 3px;
+  font:
+    12px 'Microsoft YaHei',
+    sans-serif;
+  color: #1c3d5d;
+  text-shadow: 0 0 4px white;
+}
+.setup-title > button {
+  margin-left: auto;
+  align-self: flex-start;
+  background: linear-gradient(#e9a895, #bb4c32);
+  width: 44px;
+  height: 20px;
+  color: white;
+  border: 1px solid #987061;
+  border-radius: 0 0 3px 3px;
+  font: 18px Arial;
+}
+.setup-body {
+  display: flex;
+  min-height: 530px;
+  background: #fff;
+  border: 1px solid #5e83a6;
+  box-shadow: 0 0 0 1px #e7f2ff;
+  overflow: hidden;
+}
+.setup-body > aside {
+  width: 218px;
+  flex-shrink: 0;
+  background: linear-gradient(150deg, #234d81, #5b91be 80%, #97bfd9);
+  padding: 35px 26px;
+  color: #edf7ff;
+  position: relative;
+}
+.setup-body > aside > .app-icon {
+  width: 65px;
+  height: 65px;
+}
+.setup-body > aside h2 {
+  font:
+    25px/1.45 'Segoe UI',
+    sans-serif;
+  font-weight: 300;
+  margin: 17px 0 24px;
+  letter-spacing: 0.2px;
+}
+.setup-body > aside p {
+  font:
+    12px/1.9 'Microsoft YaHei',
+    sans-serif;
+  color: #d3e9fa;
+}
+.setup-body > aside hr {
+  border: 0;
+  border-top: 1px solid #abc9e66b;
+  margin: 23px 0;
+}
+.setup-body > aside > span {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #cee2f4;
+  margin-top: 15px;
+}
+.setup-version {
+  position: absolute;
+  bottom: 26px;
+  font:
+    24px 'Segoe UI',
+    sans-serif;
+  color: #fff;
+}
+.setup-version small {
+  font:
+    11px 'Microsoft YaHei',
+    sans-serif;
+  color: #d5eafa;
+}
+.win-enrollment .enrollment-form {
+  padding: 30px 30px 25px;
+  flex: 1;
+}
+.win-enrollment .enrollment-form > h2 {
+  font:
+    20px 'Microsoft YaHei',
+    sans-serif;
+  color: #15517e;
+  line-height: 1.5;
+}
+.win-enrollment .enrollment-form > .muted {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 14px 0 24px;
+  color: #5d7487;
+}
+.win-enrollment .form-row {
+  margin-bottom: 18px;
+}
+.win-enrollment .form-row > label,
+.win-enrollment .field-label,
+.win-enrollment .seed-label {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #344b5e;
+}
+.win-enrollment input,
+.win-enrollment select {
+  border: 1px solid #8099b0;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 2px #6786a51c;
+  font-size: 12px;
+  color: #263f54;
+  padding: 7px 9px;
+}
+.win-enrollment .major-options {
+  gap: 8px;
+  margin-bottom: 19px;
+}
+.win-enrollment .major-option {
+  border-radius: 2px;
+  border-color: #c8d6e2;
+  padding: 13px 12px;
+  background: #fff;
+  color: #5884a6;
+}
+.win-enrollment .major-option.selected {
+  border-color: #7bafd1;
+  background: linear-gradient(#f2f9ff, #dceefb);
+}
+.win-enrollment .major-option strong {
+  font-size: 12px;
+  color: #284c69;
+}
+.win-enrollment .major-option small {
+  font-size: 10px;
+  letter-spacing: 0;
+  color: #71889a;
+}
+.win-enrollment .radio-circle {
+  border-color: #7da9c7;
+}
+.win-enrollment .radio-circle > i {
+  background: #4989b9;
+}
+.win-enrollment .seed-label > span {
+  color: #7c91a3;
+  font-size: 10px;
+}
+.setup-form-footer {
+  border-top: 1px solid #d1dfe9;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 16px;
+}
+.setup-form-footer > small {
+  font-size: 10px;
+  color: #8a9cab;
+  line-height: 1.7;
+  max-width: 120px;
+}
+.win-enrollment .enroll-button.button {
+  width: auto;
+  flex: 1;
+  min-height: 31px;
+  height: auto;
+  margin: 0;
+  color: #143c5b;
+  font-size: 12px;
+  letter-spacing: 0;
+  background: linear-gradient(#f2faff, #cce7f9);
+  border-color: #4b86b5;
+  padding: 8px 12px;
+}
+.win-shutdown-dialog {
+  background: linear-gradient(#d6e8fa, #81a8d2);
+  padding: 0 7px 7px;
+  border: 1px solid #c3e0f9;
+  box-shadow:
+    0 0 0 1px #30547b,
+    0 12px 40px #00214991;
+  border-radius: 6px;
+  text-align: left;
+  width: 460px;
+}
+.shutdown-title {
+  height: 29px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #1a3d60;
+  font:
+    12px 'Microsoft YaHei',
+    sans-serif;
+  text-shadow: 0 0 4px white;
+}
+.shutdown-title > button {
+  margin-left: auto;
+  width: 43px;
+  height: 21px;
+  background: linear-gradient(#e7ab9a, #b7553b);
+  color: white;
+  border: 1px solid #936f65;
+  border-radius: 0 0 3px 3px;
+  font: 18px Arial;
+  align-self: flex-start;
+}
+.shutdown-copy {
+  display: flex;
+  gap: 17px;
+  background: #f1f6fb;
+  padding: 25px 24px 17px;
+  color: #1c3d5c;
+}
+.shutdown-copy > svg {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.shutdown-copy h2 {
+  font:
+    17px 'Microsoft YaHei',
+    sans-serif;
+  letter-spacing: 0;
+  color: #203f5e;
+}
+.shutdown-copy p {
+  font:
+    12px/1.8 '宋体',
+    sans-serif;
+  color: #566f85;
+  margin-top: 10px;
+}
+.win-shutdown-dialog .sleep-plan {
+  border: 0;
+  background: #f1f6fb;
+  border-radius: 0;
+  padding: 5px 24px 14px;
+  margin: 0;
+  color: #425f7a;
+}
+.win-shutdown-dialog .sleep-plan > span {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #7e92a4;
+  margin-bottom: 8px;
+}
+.win-shutdown-dialog .sleep-plan > b {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #506b82;
+}
+.shutdown-note {
+  font:
+    10px/1.8 '宋体',
+    sans-serif;
+  background: #f1f6fb;
+  padding: 0 24px 16px;
+  color: #8a9caa;
+}
+.win-shutdown-dialog .dialog-buttons {
+  margin: 0;
+  background: #e6edf5;
+  border-top: 1px solid #bacdda;
+  padding: 10px 15px;
+}
+.win-shutdown-dialog .dialog-buttons .button {
+  font-size: 12px;
+}
+/* Internet Explorer 9：导航、地址栏与标签。 */
+.ie9-chrome {
+  flex-shrink: 0;
+  background: linear-gradient(#d7e8f7, #eaf3fb);
+  border-bottom: 1px solid #99b8d0;
+  color: #233f58;
+}
+.ie9-navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 7px;
+  height: 38px;
+}
+.ie9-navigation > .ie-back {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: linear-gradient(#90c3eb, #2678bd 52%, #145b99 53%, #4e9dcd);
+  border: 1px solid #32658f;
+  box-shadow: inset 0 0 0 1px #dbf4ffb8;
+  font: bold 24px/1 Arial;
+  color: white;
+  flex-shrink: 0;
+  padding: 0;
+}
+.ie-forward {
+  color: #86a2b8;
+  border: 1px solid #a7c3da;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  font-size: 17px;
+  padding: 0;
+  background: #f4f9fd;
+}
+.ie9-navigation > form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  height: 25px;
+  min-width: 0;
+  border: 1px solid #8daac2;
+  box-shadow: inset 0 1px 2px #7695af38;
+  background: #fff;
+  padding: 0 5px;
+}
+.ie9-navigation > form > .app-icon {
+  width: 15px;
+  height: 15px;
+}
+.ie9-navigation input {
+  border: 0;
+  padding: 3px 0;
+  box-shadow: none;
+  font: 12px Arial;
+  flex: 1;
+  min-width: 0;
+  border-radius: 0;
+  color: #243746;
+  background: transparent;
+  height: 22px;
+}
+.ie9-navigation button {
+  color: #416d91;
+  padding: 1px 3px;
+  font-size: 17px;
+}
+.ie9-navigation > button:nth-last-child(2) {
+  color: #dfad24;
+  text-shadow: 0 1px white;
+}
+.ie9-tabs {
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 77px;
+  height: 28px;
+  gap: 3px;
+}
+.ie9-tabs > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(#f5faff, #c9dff1);
+  border: 1px solid #9ab7cf;
+  border-bottom-color: #c2d6e7;
+  border-radius: 4px 4px 0 0;
+  min-width: 220px;
+  max-width: 340px;
+  height: 27px;
+  padding: 4px 9px;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.ie9-tabs .app-icon {
+  width: 15px;
+  height: 15px;
+}
+.ie9-tabs > div > span {
+  margin-left: auto;
+  color: #6c879f;
+  font: 16px Arial;
+  padding-left: 13px;
+}
+.ie9-tabs > button {
+  width: 27px;
+  height: 26px;
+  border: 1px solid #a2bed5;
+  border-radius: 3px 3px 0 0;
+  background: #daeaf7;
+  color: #5e7d99;
+  font-size: 15px;
+}
+.ie9-tabs > span {
+  margin-left: auto;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #728aa0;
+  padding-right: 7px;
+}
+/* QQ2012 主面板与独立会话。 */
+.window-chat {
+  padding: 0 2px 2px;
+  border: 1px solid #70b5df;
+  border-radius: 5px;
+  background: #58b2df;
+  box-shadow:
+    0 0 0 1px #2a6996,
+    0 5px 17px #00304c69;
+  backdrop-filter: none;
+}
+.window-chat .window-titlebar {
+  height: 24px;
+  min-height: 24px;
+  background: linear-gradient(#78c9ee, #4cb1df);
+  font: 12px Tahoma;
+  color: #073c5b;
+  text-shadow: none;
+  padding-left: 7px;
+}
+.window-chat .window-titlebar > .app-icon {
+  display: none;
+}
+.window-chat .window-titlebar > span {
+  font-weight: 600;
+}
+.window-chat .window-controls {
+  border: 0;
+  box-shadow: none;
+  top: 2px;
+  right: 0;
+  height: 19px;
+}
+.window-chat .window-controls > button {
+  background: none !important;
+  border: 0 !important;
+  color: #effbff;
+  width: 24px;
+}
+.window-chat .window-controls > button:hover {
+  background: #bbe8ff45 !important;
+}
+.window-chat .window-controls > button.window-close {
+  width: 25px;
+}
+.window-chat .window-surface {
+  border: 0;
+  box-shadow: none;
+  background: #f6fcff;
+}
+.app-chat > .action-feedback {
+  font-size: 9px;
+  background: #edf8fd;
+  color: #6393ac;
+  border-top: 1px solid #c8e4f1;
+  min-height: 22px;
+  padding: 5px 7px;
+}
+.qq-main-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  background: linear-gradient(#f1fbff, #fff);
+}
+.qq-profile {
+  height: 82px;
+  min-height: 82px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  padding: 11px 8px 7px;
+  background: linear-gradient(#4aafdc, #83c8e9);
+  position: relative;
+}
+.qq-profile .avatar {
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 0 1px #3996bd !important;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.qq-profile > div {
+  padding-top: 1px;
+  min-width: 0;
+}
+.qq-profile strong {
+  display: block;
+  font-size: 12px;
+  color: #102c3b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.qq-profile strong > span {
+  font-size: 9px;
+  color: #287ca4;
+}
+.qq-level {
+  display: block;
+  color: #fae976;
+  font: 12px Arial;
+  text-shadow: 0 1px #5b8c91;
+  margin: 5px 0;
+}
+.qq-level > i {
+  font-style: normal;
+}
+.qq-level b {
+  font: 9px Arial;
+  color: #ffe68a;
+}
+.qq-profile > div > small {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #184f6a;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.qq-weather {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  width: 39px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1;
+  color: #fff58b;
+  text-shadow: 0 0 12px #fff295;
+  pointer-events: none;
+}
+.qq-weather > small {
+  display: block;
+  font:
+    8px '宋体',
+    sans-serif;
+  color: #286887;
+  text-shadow: none;
+  margin-top: 5px;
+}
+.qq-shortcuts {
+  height: 28px;
+  min-height: 28px;
+  padding: 0 8px 4px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #83c8e9;
+  color: #1d6b91;
+}
+.qq-shortcuts > button {
+  padding: 0;
+  font-size: 18px;
+  color: #d7effc;
+}
+.qq-shortcuts .app-icon {
+  width: 18px;
+  height: 18px;
+}
+.qq-shortcuts > span {
+  margin-left: auto;
+  font: 9px Tahoma;
+  color: #4b91b4;
+}
+.qq-search {
+  padding: 3px 5px 5px;
+  background: #a8d7ed;
+  position: relative;
+}
+.qq-search > input {
+  width: 100%;
+  padding: 5px 24px 5px 6px;
+  font:
+    11px '宋体',
+    sans-serif;
+  height: 26px;
+  border-radius: 0;
+  border: 1px solid #81b8d4;
+  color: #5c7d91;
+  background: #f9fdff;
+  box-shadow: inset 0 1px 2px #85b0c22b;
+}
+.qq-search > svg {
+  position: absolute;
+  right: 13px;
+  top: 9px;
+  color: #7498b0;
+}
+.qq-contact-tabs {
+  display: flex;
+  height: 34px;
+  flex-shrink: 0;
+  background: linear-gradient(#dfedf5, #c5e1f0);
+  border-top: 1px solid #c8e9f7;
+  border-bottom: 1px solid #a8ccdf;
+}
+.qq-contact-tabs > button {
+  flex: 1;
+  border-right: 1px solid #afd0e2;
+  color: #77aac7;
+  padding: 4px 0;
+  border-top: 2px solid transparent;
+}
+.qq-contact-tabs > button.selected {
+  background: #f3fbff;
+  border-top-color: #4ba9d4;
+  color: #397ea4;
+}
+.qq-main-contacts {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding: 2px 0;
+}
+.qq-group-heading {
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 7px 8px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #243d4e;
+  white-space: nowrap;
+}
+.qq-group-heading.disabled {
+  color: #33495a;
+  cursor: default;
+}
+.qq-main-panel .contact {
+  padding: 5px 9px;
+  gap: 7px;
+  min-height: 49px;
+  border: 1px solid transparent;
+  width: 100%;
+  text-align: left;
+  display: flex;
+}
+.qq-main-panel .contact:hover {
+  border-color: #f1d180;
+  background: #fff2c9;
+}
+.qq-main-panel .contact.selected {
+  background: linear-gradient(#fff5cf, #fff0b6);
+  border-color: #eed28c;
+}
+.qq-main-panel .contact .avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border: 1px solid #a3b1b8 !important;
+}
+.qq-main-panel .contact b {
+  display: block;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #273c49;
+  font-weight: 400;
+}
+.qq-main-panel .contact b i {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #86949b;
+}
+.qq-main-panel .contact small {
+  display: block;
+  width: 170px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #a0adb4;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.qq-main-panel .contact em {
+  font: 9px Tahoma;
+  color: #fff;
+  background: #e69a33;
+  border-radius: 6px;
+  margin-left: auto;
+  padding: 1px 4px;
+  min-width: 12px;
+}
+.qq-main-panel .contact > span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+.qq-main-panel .presence {
+  width: 8px;
+  height: 8px;
+  border: 1px solid white;
+  background: #71ba53;
+  bottom: 0;
+  right: 0;
+}
+.qq-group-avatar {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(#ffc568, #d58c1c);
+  color: white;
+  display: grid;
+  place-items: center;
+  font:
+    20px '宋体',
+    sans-serif;
+  border: 1px solid #d4943e;
+}
+.qq-service-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  height: 29px;
+  flex-shrink: 0;
+  border-top: 1px solid #cae0eb;
+  background: #edf8fd;
+}
+.qq-service-icons > button {
+  font-size: 17px;
+  color: #d4a625;
+  padding: 0;
+  line-height: 1;
+}
+.qq-service-icons .app-icon {
+  width: 19px;
+  height: 19px;
+}
+.qq-main-footer {
+  display: flex;
+  gap: 8px;
+  background: #dfeffa;
+  border-top: 1px solid #bddbe9;
+  padding: 5px 7px;
+  min-height: 26px;
+  color: #5a86a3;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.qq-main-footer > button {
+  padding: 0;
+  font-size: 11px;
+}
+.qq-main-footer > button:last-child {
+  margin-left: auto;
+}
+.qq-chat-dialog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: #f5fbfe;
+}
+.qq-dialog-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 13px;
+  min-height: 64px;
+  background: linear-gradient(#a4d4ec, #e6f4fb);
+  border-bottom: 1px solid #c6e0ee;
+}
+.qq-dialog-profile h3 {
+  font:
+    15px 'Microsoft YaHei',
+    sans-serif;
+  color: #1b4e69;
+  font-weight: 400;
+}
+.qq-dialog-profile small {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #6a9bb2;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 380px;
+}
+.qq-dialog-profile > span:last-child {
+  margin-left: auto;
+  color: #79a3b8;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.qq-chat-tools {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 6px 14px;
+  min-height: 34px;
+  border-bottom: 1px solid #bbd9e9;
+  background: linear-gradient(#e6f4fc, #d4eaf7);
+  color: #548caa;
+  font-size: 20px;
+}
+.qq-chat-tools > button {
+  color: #4988a8;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+}
+.qq-chat-tools > button > span {
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.qq-chat-tools .push-right {
+  font-size: 17px;
+}
+.qq-chat-columns {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.qq-dialog-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  background: white;
+  position: relative;
+}
+.app-chat .chat-body {
+  padding: 9px 15px;
+  flex: 1;
+  background: white;
+  overflow: auto;
+  min-height: 0;
+}
+.app-chat .message {
+  display: block;
+  margin-bottom: 10px;
+  font:
+    12px/1.65 '宋体',
+    sans-serif;
+  align-items: initial;
+}
+.app-chat .message.outgoing {
+  align-items: initial;
+}
+.app-chat .message-date {
+  font: 10px Tahoma;
+  color: #9eabb5;
+  background: none;
+  text-align: center;
+  margin: 7px 0 10px;
+  padding: 0;
+}
+.app-chat .message-meta {
+  display: flex;
+  gap: 8px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #1273b4;
+  margin: 0 0 3px;
+}
+.app-chat .message-meta small {
+  font: 10px Tahoma;
+  color: inherit;
+}
+.app-chat .message.outgoing .message-meta {
+  color: #24a331;
+}
+.app-chat .message-bubble,
+.app-chat .message.outgoing .message-bubble {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #191919;
+  line-height: 1.6;
+  font:
+    12px/1.6 '宋体',
+    sans-serif;
+  padding: 0 0 0 12px;
+  max-width: 100%;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.app-chat .message-expiry {
+  font:
+    9px '宋体',
+    sans-serif;
+  color: #a8a8a8;
+  display: block;
+  padding-left: 12px;
+  margin-top: 4px;
+}
+.qq-format-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: linear-gradient(#f2f7fc, #e5edf5);
+  border-top: 1px solid #c7d9e7;
+  border-bottom: 1px solid #d4e2ec;
+  min-height: 29px;
+  padding: 4px 8px;
+  color: #718fab;
+}
+.qq-format-toolbar button {
+  padding: 0;
+  font-size: 11px;
+  color: #4d6f8b;
+}
+.qq-format-toolbar button:first-child {
+  font: 18px Georgia;
+  color: #667b91;
+}
+.qq-format-toolbar button:nth-child(2) {
+  font-size: 20px;
+  color: #b69d44;
+}
+.qq-format-toolbar span {
+  width: 1px;
+  height: 13px;
+  background: #c1d2df;
+}
+.app-chat .chat-compose {
+  padding: 0;
+  background: white;
+  min-height: 102px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.app-chat .chat-compose textarea {
+  height: 68px;
+  resize: none;
+  border: 0;
+  background: #fff;
+  padding: 8px 12px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #111;
+  box-shadow: none;
+  flex: 1;
+}
+.app-chat .chat-compose textarea.qq-large-font {
+  font:
+    16px 'Microsoft YaHei',
+    sans-serif;
+  color: #1c66b0;
+}
+.app-chat .chat-compose > div {
+  border-top: 1px solid #d4e2ed;
+  background: #eaf2f8;
+  padding: 5px 9px;
+  margin: 0;
+  display: flex;
+  gap: 7px;
+  justify-content: flex-end;
+}
+.app-chat .chat-compose small {
+  font:
+    9px '宋体',
+    sans-serif;
+  color: #8e9dab;
+  margin-right: auto;
+  max-width: none;
+}
+.app-chat .chat-compose .button {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #1d445f;
+  background: linear-gradient(#fff, #d7e7f2);
+  border-color: #85abc8;
+  min-height: 24px;
+  padding: 4px 12px;
+}
+.qq-chat-aside {
+  width: 172px;
+  flex-shrink: 0;
+  border-left: 1px solid #bad4e6;
+  background: #eaf5fc;
+  padding: 9px;
+  overflow: auto;
+  min-height: 0;
+  color: #527792;
+  font:
+    11px/1.8 '宋体',
+    sans-serif;
+}
+.qq-chat-aside h4 {
+  font:
+    11px '宋体',
+    sans-serif;
+  font-weight: 600;
+  color: #48718e;
+  padding: 8px 2px;
+  border-bottom: 1px solid #c9dce9;
+  margin-bottom: 8px;
+}
+.qq-chat-aside p {
+  font-size: 11px;
+  color: #6f91a8;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.qq-chat-aside > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 4px;
+  color: #3b7d9e;
+}
+.qq-chat-aside > button .avatar {
+  width: 24px;
+  height: 24px;
+}
+.qq-show {
+  height: 192px;
+  background: linear-gradient(#b1d8f0, #eaf6fd 58%, #b7d4e6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #a9cce2;
+  overflow: hidden;
+}
+.qq-show > .avatar {
+  width: 73px !important;
+  height: 82px !important;
+  border: 0 !important;
+  border-radius: 50% 50% 45% 45% !important;
+  z-index: 1;
+  margin-top: -44px;
+}
+.qq-show-body {
+  position: absolute;
+  top: 105px;
+  left: 43px;
+  width: 67px;
+  height: 76px;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(90deg, #2d4b64, #668fae 50%, #2d4b64);
+  box-shadow:
+    -13px 1px 0 -5px #658ca6,
+    13px 1px 0 -5px #658ca6;
+}
+.qq-show > span:last-child {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #86a5bb;
+  font-size: 10px;
+  z-index: 2;
+}
+.qq-chat-aside > .qq-space-link {
+  border-top: 1px solid #c4dce9;
+  margin-top: 9px;
+  padding-top: 9px;
+  font-size: 10px;
+}
+.qq-profile-link {
+  font-size: 10px;
+}
+.qq-records-strip {
+  padding: 7px 12px;
+  background: #ffffe4;
+  border-top: 1px solid #e5e1b7;
+  font-size: 10px;
+  color: #8a8150;
+}
+.qq-emoticons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 7px;
+  border: 1px solid #bdd3e3;
+  background: #f5fcff;
+  position: absolute;
+  bottom: 125px;
+  left: 4px;
+  right: 4px;
+  box-shadow: 1px 2px 6px #41698733;
+  z-index: 3;
+}
+.qq-emoticons > button {
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 6px;
+  background: #fff1b8;
+  border: 1px solid #e9ce70;
+  border-radius: 3px;
+  color: #ab8734;
+}
+.qq-relation-details h4 {
+  font-size: 11px;
+  margin-top: 4px;
+}
+.qq-relation-details .relation-meter label {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #5d88a3;
+}
+.qq-relation-details .social-buttons {
+  gap: 7px;
+  margin: 13px 0;
+}
+.qq-relation-details .social-buttons .button {
+  font-size: 10px;
+  background: #fff;
+  border-color: #accadd;
+  color: #396a88;
+  min-height: 25px;
+  padding: 5px 7px;
+}
+.qq-relation-details .social-buttons small {
+  font-size: 9px;
+  color: #7c9bb1;
+}
+.qq-relation-details .qq-memory {
+  font-size: 10px;
+}
+.qq-promise {
+  background: #fffbd7;
+  border: 1px solid #e5dca5;
+  padding: 6px;
+  font-size: 10px;
+}
+/* 人人网：2012 蓝白三栏和新鲜事。 */
+.renren-page {
+  flex: 1;
+  min-height: 0;
+  background: #fff;
+  color: #333;
+  font:
+    12px '宋体',
+    sans-serif;
+  position: relative;
+}
+.renren-bluebar {
+  height: 43px;
+  background: linear-gradient(#477eae, #2d6397);
+  border-bottom: 1px solid #244e7b;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  padding: 0 17px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  font:
+    12px '宋体',
+    sans-serif;
+}
+.renren-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font:
+    24px 'Microsoft YaHei',
+    sans-serif;
+  letter-spacing: -1px;
+}
+.renren-logo > .app-icon {
+  width: 29px;
+  height: 29px;
+  background: white !important;
+  border-radius: 3px !important;
+  padding: 2px;
+}
+.renren-logo > span {
+  font: 9px Arial;
+  letter-spacing: 0;
+  align-self: flex-end;
+  margin-bottom: 8px;
+}
+.renren-bluebar > button {
+  color: #fff;
+  font-size: 12px;
+  padding: 0;
+  white-space: nowrap;
+}
+.renren-top-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+  width: 180px;
+}
+.renren-top-search input {
+  height: 24px;
+  border: 1px solid #244e7b;
+  background: #fff;
+  color: #547492;
+  width: 100%;
+  font:
+    11px '宋体',
+    sans-serif;
+  border-radius: 1px;
+  padding: 4px 22px 4px 6px;
+  box-shadow: inset 0 1px 2px #1a3f6c33;
+}
+.renren-top-search > svg {
+  position: absolute;
+  right: 6px;
+  color: #6985a0;
+}
+.renren-layout {
+  display: grid;
+  grid-template-columns: 145px minmax(340px, 1fr) 190px;
+  gap: 20px;
+  padding: 18px 19px 25px;
+  min-height: 550px;
+  max-width: 1080px;
+  margin: auto;
+}
+.renren-left {
+  font:
+    12px '宋体',
+    sans-serif;
+  border-right: 1px solid #e0e8ef;
+  padding-right: 13px;
+  min-width: 0;
+}
+.renren-profile {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.renren-profile .avatar {
+  width: 42px !important;
+  height: 42px !important;
+}
+.renren-profile > span {
+  min-width: 0;
+}
+.renren-profile b {
+  color: #23588c;
+  font:
+    12px '宋体',
+    sans-serif;
+  font-weight: 600;
+}
+.renren-profile button {
+  display: block;
+  color: #416f99;
+  font:
+    10px '宋体',
+    sans-serif;
+  padding: 6px 0;
+}
+.renren-profile small {
+  color: #c39c35;
+  font: 9px Tahoma;
+}
+.renren-left nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid #dce5ee;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+.renren-left nav > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  padding: 8px 7px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #2c5e8b;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.renren-left nav > button.selected {
+  background: #e3edf8;
+  border-color: #d1deeb;
+  font-weight: 600;
+}
+.renren-left nav > button > svg {
+  color: #7295b4;
+  width: 14px;
+}
+.renren-left > h4 {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #666;
+  margin: 15px 0 10px;
+}
+.renren-left > button {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #49719b;
+  padding: 6px 4px;
+  text-align: left;
+}
+.renren-left > p {
+  font:
+    11px/2 '宋体',
+    sans-serif;
+  color: #7e8fa0;
+}
+.renren-radio {
+  margin-top: 30px;
+  border: 1px solid #ceddea;
+  background: linear-gradient(#fbfdff, #e3eef9);
+  padding: 9px 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #607c98;
+  font-size: 11px;
+}
+.renren-radio > button {
+  margin-left: auto;
+  color: #5485ad;
+  padding: 0;
+}
+.renren-feed {
+  min-width: 0;
+}
+.renren-welcome {
+  margin: 2px 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #37648d;
+  font-size: 13px;
+}
+.renren-welcome b {
+  font-weight: 600;
+}
+.renren-welcome > span {
+  font-size: 11px;
+  color: #999;
+}
+.renren-publisher {
+  border: 1px solid #b9cfe3;
+  border-radius: 2px;
+  background: #f4f8fc;
+  padding: 0 10px 9px;
+  margin-bottom: 18px;
+}
+.renren-publish-types {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 9px 0;
+  color: #315f8b;
+  font-size: 12px;
+}
+.renren-publish-types > b {
+  font-size: 12px;
+  font-weight: 600;
+}
+.renren-publish-types > button {
+  font-size: 11px;
+  color: #5c7c9b;
+  padding: 0;
+}
+.renren-publisher textarea {
+  width: 100%;
+  height: 58px;
+  resize: none;
+  border: 1px solid #bed1e2;
+  box-shadow: inset 0 1px 3px #6d92ae17;
+  padding: 8px;
+  background: #fff;
+  border-radius: 0;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #333;
+}
+.renren-publisher textarea::placeholder {
+  color: #a9b6c2;
+}
+.renren-publisher > div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.renren-publisher > div:last-child > span {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #7d96ab;
+}
+.renren-publisher .button {
+  font:
+    11px '宋体',
+    sans-serif;
+  background: linear-gradient(#779bc2, #4a79aa);
+  border-color: #42719e;
+  color: #fff;
+  min-height: 25px;
+  padding: 4px 14px;
+}
+.renren-feed-tabs {
+  border-bottom: 1px solid #b9cfe2;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 2px;
+  padding: 0 3px;
+}
+.renren-feed-tabs > button {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #4e7396;
+  padding: 10px 0 8px;
+  border-bottom: 2px solid transparent;
+}
+.renren-feed-tabs > button.selected {
+  font-weight: 600;
+  color: #245b90;
+  border-bottom-color: #4b83b3;
+}
+.renren-feed-tabs > small {
+  margin-left: auto;
+  color: #99a7b6;
+  font-size: 10px;
+}
+.renren-post {
+  padding: 15px 0;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e4ebf1;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #333;
+}
+.renren-post > .avatar {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+}
+.renren-post > div {
+  min-width: 0;
+  flex: 1;
+}
+.renren-post header {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.renren-post header > button {
+  padding: 0;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #255f96;
+  font-weight: 600;
+}
+.renren-post header > span {
+  font-size: 11px;
+  color: #8b9aaa;
+}
+.renren-post > div > p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #3e4a55;
+  word-break: break-word;
+}
+.renren-post footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 9px;
+  color: #6b8ead;
+  font-size: 11px;
+}
+.renren-post footer > small {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #a0aab5;
+  margin-right: auto;
+}
+.renren-post footer > button {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #4775a0;
+  padding: 0;
+}
+.renren-comments {
+  background: #f0f5fb;
+  padding: 8px 10px;
+  margin-top: 9px;
+  border-top: 1px solid #dee8f2;
+}
+.renren-comments p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #637c93;
+}
+.renren-comments b {
+  color: #356b9d;
+  font-weight: 400;
+}
+.renren-post form {
+  display: flex;
+  gap: 6px;
+  margin-top: 9px;
+}
+.renren-post form > input {
+  flex: 1;
+  min-width: 0;
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 5px 7px;
+  border: 1px solid #bed1e3;
+  border-radius: 0;
+}
+.renren-post form > .button {
+  font-size: 11px;
+  min-height: 25px;
+  padding: 4px 9px;
+  color: #496c91;
+}
+.renren-campus-poster {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #d7e5ed, #f8e8cb 55%, #a6c2c9);
+  border: 1px solid #bdcdd2;
+  padding: 18px 18px 15px;
+  margin-top: 13px;
+  color: #315b75;
+  max-width: 450px;
+}
+.renren-campus-poster:after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  bottom: -25px;
+  width: 90px;
+  height: 100px;
+  background: #315a75;
+  clip-path: polygon(20% 0, 80% 0, 80% 60%, 100% 90%, 0 90%, 20% 60%);
+  opacity: 0.3;
+  transform: rotate(12deg);
+}
+.renren-campus-poster > b {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #6d8c9a;
+  margin-bottom: 11px;
+}
+.renren-campus-poster > strong {
+  display: block;
+  font:
+    27px 'Microsoft YaHei',
+    sans-serif;
+  letter-spacing: 7px;
+  color: #3b637c;
+}
+.renren-campus-poster > span {
+  display: block;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #7f928d;
+  margin-top: 9px;
+}
+.renren-campus-poster > small {
+  display: block;
+  font-size: 10px;
+  margin-top: 15px;
+  color: #90a4ab;
+}
+.renren-right > section {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e9f0;
+  margin-bottom: 18px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #8694a2;
+}
+.renren-right h4 {
+  font-size: 12px;
+  color: #6a7f91;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.renren-right > section > button {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 6px 0;
+  width: 100%;
+  text-align: left;
+}
+.renren-right > section > button > span b {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #356c9c;
+  font-weight: 600;
+  display: block;
+}
+.renren-right > section > button small {
+  display: block;
+  font-size: 10px;
+  color: #9babb8;
+  margin-top: 4px;
+}
+.renren-right > section > button em {
+  display: block;
+  font-style: normal;
+  font-size: 10px;
+  color: #4b82b0;
+  margin-top: 4px;
+}
+.renren-visitors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.renren-visitors > button {
+  padding: 0;
+  text-align: center;
+  color: #6688a4;
+  font-size: 10px;
+}
+.renren-visitors .avatar {
+  display: block;
+  margin: auto;
+}
+.renren-visitors small {
+  display: block;
+  font-size: 9px;
+  margin-top: 6px;
+  max-width: 43px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.renren-right > section > small {
+  font-size: 10px;
+  color: #9caab5;
+  line-height: 1.7;
+}
+.renren-announcement {
+  background: #eef5fc;
+  border: 1px solid #dae6f1;
+  padding: 12px !important;
+}
+.renren-announcement p {
+  font-size: 11px;
+  color: #7a92a6;
+  line-height: 1.9;
+  margin: 4px 0 10px;
+}
+.renren-announcement > button {
+  font-size: 10px !important;
+  color: #477aa3;
+}
+.renren-copyright {
+  font:
+    10px/2 '宋体',
+    sans-serif;
+  color: #acb8c4;
+}
+.renren-bottom-chat {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(#f7faff, #e8f0f8);
+  border-top: 1px solid #b8cfe2;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 17px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #7290a9;
+  z-index: 4;
+}
+.renren-bottom-chat > button {
+  font-size: 11px;
+  color: #4c759a;
+  padding: 0;
+}
+.renren-friends {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.renren-friends > button {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #f6f9fc;
+  border: 1px solid #d6e3ef;
+  text-align: left;
+}
+.renren-friends b {
+  font-size: 12px;
+  color: #32689a;
+}
+.renren-friends small {
+  display: block;
+  font-size: 10px;
+  color: #8ca0b2;
+  margin-top: 7px;
+  line-height: 1.6;
+}
+/* QQ空间六代：个人装扮、模块与说说。 */
+.qzone-page {
+  background: #d8ebf4;
+  color: #48697e;
+  font:
+    12px '宋体',
+    sans-serif;
+  flex: 1;
+  min-height: 0;
+  --qzone-accent: #528cad;
+  --qzone-light: #e8f4fa;
+}
+.qzone-page.skin-green {
+  background: #e3edd5;
+  --qzone-accent: #789356;
+  --qzone-light: #f1f6e8;
+}
+.qzone-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 22px;
+  height: 32px;
+  background: #1a4d6bcc;
+  border-bottom: 1px solid #87b2c7;
+  color: #edf8ff;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.qzone-top > b {
+  font:
+    13px 'Microsoft YaHei',
+    sans-serif;
+  color: #fff;
+  margin-left: -13px;
+}
+.qzone-top > button {
+  color: #e4f4ff;
+  padding: 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.qzone-cover {
+  height: 194px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 80% 15%, #ffffffb0 0 8%, transparent 35%),
+    linear-gradient(#b9e2f6, #edf9ff 65%, #c5e7f2);
+  padding: 19px 30px;
+  color: #6498b6;
+  overflow: hidden;
+}
+.skin-green .qzone-cover {
+  background:
+    radial-gradient(ellipse at 80% 15%, #ffffffb0 0 8%, transparent 35%),
+    linear-gradient(#c1dcae, #f3f8e8 65%, #d9e9bd);
+  color: #8ca469;
+}
+.qzone-cover:after {
+  content: '';
+  position: absolute;
+  right: -45px;
+  bottom: -30px;
+  width: 540px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid #83bac247;
+  transform: rotate(-13deg);
+  box-shadow:
+    0 -15px 0 -12px #a1c5cb,
+    0 -40px 0 -37px #fff;
+}
+.qzone-cover h1 {
+  font:
+    25px 'KaiTi',
+    '楷体',
+    serif;
+  color: var(--qzone-accent);
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.qzone-cover > p {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #92afbc;
+  margin-top: 9px;
+  letter-spacing: 1px;
+}
+.qzone-url {
+  display: block;
+  font: 9px Tahoma;
+  color: #a1beca;
+  margin-top: 8px;
+}
+.qzone-decorate {
+  position: absolute;
+  right: 23px;
+  top: 19px;
+  font:
+    11px '宋体',
+    sans-serif;
+  background: linear-gradient(#fffef2, #f7e7a7);
+  border: 1px solid #d9c789;
+  border-radius: 2px;
+  color: #ad9447;
+  padding: 6px 10px;
+  z-index: 2;
+}
+.qzone-user {
+  position: absolute;
+  left: 29px;
+  bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+.qzone-user > .avatar {
+  border: 3px solid #fff !important;
+  box-shadow: 0 1px 4px #57869d55 !important;
+  width: 72px;
+  height: 72px;
+}
+.qzone-user b {
+  display: block;
+  font:
+    16px 'Microsoft YaHei',
+    sans-serif;
+  font-weight: 600;
+  color: #4d7d97;
+}
+.qzone-user small {
+  font-size: 10px;
+  color: #d5a447;
+  display: block;
+  margin-top: 8px;
+}
+.qzone-user p {
+  font-size: 11px;
+  color: #6e94a7;
+  margin-top: 8px;
+}
+.qzone-tabs {
+  background: linear-gradient(#f7fdff, #d3eaf5);
+  border-top: 1px solid #f6fdff;
+  border-bottom: 1px solid #9fbfcf;
+  display: flex;
+  gap: 0;
+  padding: 0 30px;
+  min-height: 35px;
+  position: relative;
+  z-index: 2;
+}
+.qzone-tabs > button {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #4e809a;
+  padding: 10px 21px;
+  border-right: 1px solid #c9e0ea;
+  white-space: nowrap;
+}
+.qzone-tabs > button.selected {
+  background: linear-gradient(#f5fcff, #e7f3fa);
+  font-weight: 600;
+  color: #326786;
+  box-shadow: inset 0 2px #8ab6cb;
+}
+.qzone-layout {
+  display: grid;
+  grid-template-columns: 175px minmax(290px, 1fr) 160px;
+  gap: 15px;
+  padding: 19px 22px;
+  max-width: 1100px;
+  margin: auto;
+  align-items: start;
+}
+.qzone-sidebar > section,
+.qzone-module {
+  border: 1px solid #b5d0df;
+  background: #ffffffed;
+  margin-bottom: 14px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #54778b;
+  border-radius: 0;
+  padding: 12px;
+}
+.qzone-sidebar h3,
+.qzone-module > h3 {
+  font:
+    12px '宋体',
+    sans-serif;
+  font-weight: 600;
+  color: #457d9c;
+  background: linear-gradient(#f6fcff, #e3f1fa);
+  border-bottom: 1px solid #c5dfeb;
+  padding: 9px 11px;
+  margin: -12px -12px 12px;
+}
+.qzone-sidebar p,
+.qzone-module > p {
+  font:
+    12px/2 '宋体',
+    sans-serif;
+  color: #6f8c9e;
+  word-break: break-word;
+}
+.qzone-sidebar small,
+.qzone-module > small {
+  display: block;
+  font:
+    10px/1.9 '宋体',
+    sans-serif;
+  color: #99aeba;
+  margin-top: 12px;
+}
+.qzone-sidebar .progress {
+  height: 7px;
+  background: #e3edf3;
+  border: 1px solid #b9cedc;
+  margin-top: 6px;
+}
+.qzone-visitors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px 5px;
+}
+.qzone-visitors > button {
+  padding: 0;
+  text-align: center;
+  min-width: 0;
+}
+.qzone-visitors .avatar {
+  display: block;
+  margin: auto;
+  width: 35px;
+  height: 35px;
+}
+.qzone-visitors small {
+  display: block;
+  font-size: 9px;
+  color: #6f96ad;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+.qzone-music-player > div {
+  padding: 15px 4px;
+  background: linear-gradient(#162d3b, #355568);
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #d8e7ed;
+  border: 1px solid #648599;
+  box-shadow: inset 0 0 0 2px #a7bcc6;
+}
+.qzone-music-player > button {
+  font-size: 11px;
+  color: #7f9eb0;
+  padding: 9px 0 0;
+}
+.qzone-publisher textarea {
+  border: 1px solid #b7d0df;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: inset 0 1px 3px #98b6c62a;
+  resize: none;
+  min-height: 63px;
+  width: 100%;
+  padding: 9px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #334c5b;
+}
+.qzone-publisher textarea::placeholder {
+  color: #a1b6c3;
+}
+.qzone-publisher > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.qzone-publisher > div > span {
+  font-size: 10px;
+  color: #86a7bc;
+}
+.qzone-publisher .button {
+  font-size: 11px;
+  color: white;
+  border-color: #3d82ad;
+  background: linear-gradient(#78b0d1, #458bb5);
+  min-height: 25px;
+  padding: 4px 12px;
+}
+.qzone-post > header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.qzone-post > header b {
+  font:
+    12px '宋体',
+    sans-serif;
+  font-weight: 600;
+  color: #417e9e;
+}
+.qzone-post > header small {
+  display: block;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #9fb2bf;
+  margin-top: 6px;
+}
+.qzone-post > p {
+  font-size: 12px;
+  color: #425b6b;
+  line-height: 1.9;
+  margin: 14px 0;
+}
+.qzone-post > footer {
+  display: flex;
+  gap: 16px;
+  border-top: 1px solid #e3edf2;
+  padding-top: 9px;
+}
+.qzone-post > footer > button {
+  font-size: 11px;
+  color: #5b8fae;
+  padding: 0;
+}
+.qzone-post .qzone-comment {
+  font:
+    11px/1.8 '宋体',
+    sans-serif;
+  background: #eff7fc;
+  color: #7c99ab;
+  padding: 6px 8px;
+  margin: 9px 0 0;
+}
+.qzone-post .qzone-comment b {
+  color: #578cad;
+  font-weight: 400;
+}
+.qzone-post form {
+  display: flex;
+  gap: 5px;
+  margin-top: 9px;
+}
+.qzone-post form > input {
+  min-width: 0;
+  flex: 1;
+  font-size: 11px;
+  border-radius: 0;
+  border: 1px solid #bdd5e4;
+  padding: 5px;
+}
+.qzone-post form .button {
+  font-size: 11px;
+  min-height: 24px;
+  padding: 4px 10px;
+}
+.qzone-blog {
+  padding: 10px 0 16px;
+  border-bottom: 1px dashed #d0e1ec;
+}
+.qzone-blog h4 {
+  font-size: 12px;
+  color: #4e7f9d;
+  margin-bottom: 10px;
+}
+.qzone-blog p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #7893a4;
+  white-space: pre-wrap;
+}
+.qzone-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 13px;
+  padding: 9px 0;
+}
+.qzone-photo-grid > button {
+  padding: 5px;
+  border: 1px solid #cadce7;
+  background: #f8fcff;
+  text-align: center;
+  box-shadow: 2px 2px #e5edf3;
+  color: #6e93a9;
+}
+.qzone-photo-scene {
+  height: 95px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#9ccbe1, #cee1c3);
+  color: #fff;
+}
+.qzone-photo-scene.scene-1 {
+  background: linear-gradient(#e0bd8c, #a8bec9);
+}
+.qzone-photo-scene.scene-2 {
+  background: linear-gradient(#9eafc9, #c9d0e2);
+}
+.qzone-photo-grid b {
+  font:
+    11px '宋体',
+    sans-serif;
+  display: block;
+  margin: 10px 0 6px;
+}
+.qzone-photo-grid small {
+  font-size: 9px;
+  color: #adc1ce;
+}
+.qzone-empty {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  text-align: center;
+  color: #9bb0bf;
+  padding: 35px 20px !important;
+}
+.qzone-friend-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.qzone-friend-list > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #dbe7ef;
+  padding: 9px 4px;
+  color: #5683a0;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.qzone-friend-list > button > span:last-child {
+  margin-left: auto;
+  color: #9cb3c2;
+  font-size: 9px;
+}
+.qzone-right > .qzone-module > strong {
+  font: 25px Georgia;
+  color: #6f9fb8;
+  display: block;
+  padding: 7px 0;
+}
+.qzone-right button {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #6e9ab2;
+  padding: 8px 0 0;
+}
+.qzone-song {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 3px;
+  border-bottom: 1px solid #e3edf4;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #5985a0;
+}
+.qzone-song > button {
+  font-size: 11px;
+  color: #89a7bb;
+}
+.qzone-bottom {
+  text-align: center;
+  padding: 8px 0 22px;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #9cb8c6;
+}
+/* 英雄联盟旧版 AIR 客户端。 */
+.window-games {
+  padding: 0 4px 4px;
+  background: linear-gradient(130deg, #40536b, #101f32 45%, #52637a);
+  border: 1px solid #9a9e9b;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px #112136,
+    0 12px 33px #0012259c;
+  backdrop-filter: none;
+}
+.window-games .window-titlebar {
+  height: 23px;
+  min-height: 23px;
+  font: 10px Tahoma;
+  color: #758da3;
+  text-shadow: none;
+  background: linear-gradient(#1c3048, #101e30);
+  padding-left: 7px;
+}
+.window-games .window-titlebar > .app-icon {
+  width: 13px;
+  height: 13px;
+}
+.window-games .window-controls {
+  border: 0;
+  box-shadow: none;
+  height: 19px;
+  top: 1px;
+}
+.window-games .window-controls > button {
+  background: none !important;
+  border: 0 !important;
+  color: #d6bb74;
+  width: 24px;
+}
+.window-games .window-controls .window-close {
+  width: 27px;
+}
+.window-games .window-controls > button:hover {
+  background: #405675 !important;
+}
+.window-games .window-surface {
+  border: 1px solid #54738e;
+  box-shadow: inset 0 0 0 1px #071426;
+  background: #051523;
+}
+.app-games {
+  background: #061320;
+  color: #b6c6d7;
+}
+.app-games .action-feedback {
+  background: linear-gradient(#1d3045, #0a1b2d);
+  border-color: #3a526d;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #7595b6;
+  min-height: 22px;
+  padding: 5px 9px;
+}
+.app-games .action-feedback > svg {
+  color: #b4a16c;
+}
+.league-client {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background:
+    radial-gradient(at 30% 0, #1f3a50aa, transparent 60%),
+    repeating-linear-gradient(130deg, #10223410 0 3px, #6a87a005 3px 6px), #05131e;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #9ab6d0;
+}
+.lol-client-header {
+  height: 76px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 16px 9px;
+  border-bottom: 2px solid #45556b;
+  background: linear-gradient(#2e3f54, #111e2d 52%, #1a2e43 53%, #132132);
+  box-shadow:
+    inset 0 -1px #050e1b,
+    inset 0 1px #8a9aaa2e;
+  position: relative;
+}
+.lol-home-logo {
+  width: 134px;
+  flex-shrink: 0;
+  padding: 0;
+  text-align: center;
+}
+.lol-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  line-height: 0.9;
+  filter: drop-shadow(0 2px 1px #000);
+  color: #e1c47c;
+  text-shadow:
+    1px 1px #3f2a06,
+    -1px -1px #fff3b3;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -1px;
+}
+.lol-wordmark b:first-child {
+  font-size: 24px;
+  font-weight: 700;
+}
+.lol-wordmark b:nth-of-type(2) {
+  font-size: 24px;
+  font-weight: 700;
+}
+.lol-wordmark small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.lol-wordmark em {
+  font:
+    10px '宋体',
+    sans-serif;
+  letter-spacing: 6px;
+  text-shadow: none;
+  color: #b8a56d;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.lol-header-ornament {
+  width: 140px;
+  height: 45px;
+  flex: 1;
+  max-width: 180px;
+  border: 1px solid #7e8d9a3d;
+  background: linear-gradient(125deg, #39526940, #142639);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  box-shadow: inset 0 1px #8fa4b22e;
+}
+.lol-play {
+  width: 154px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(#d34827, #8e1f13 48%, #550b08 49%, #a42113 90%);
+  border: 2px solid #b85b37;
+  outline: 1px solid #1b0b06;
+  box-shadow:
+    inset 0 0 0 1px #f19c66,
+    inset 0 0 20px #65110b,
+    0 0 8px #000;
+  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+  font:
+    28px/1 Georgia,
+    serif;
+  color: #fff2bd;
+  text-shadow: 0 2px 3px #240d01;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 0;
+  position: relative;
+}
+.lol-play > span {
+  display: block;
+  font:
+    9px '宋体',
+    sans-serif;
+  letter-spacing: 4px;
+  color: #edbc7e;
+  margin-top: 4px;
+}
+.lol-play:hover {
+  filter: brightness(1.2);
+}
+.lol-play:disabled {
+  opacity: 0.6;
+}
+.lol-summoner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding-left: 7px;
+}
+.hero-portrait {
+  object-fit: cover;
+  display: block;
+  image-rendering: auto;
+  border: 1px solid #958354;
+  box-shadow: 0 0 0 1px #06131f;
+  flex-shrink: 0;
+}
+.lol-summoner > .hero-portrait {
+  width: 46px;
+  height: 46px;
+  border: 2px solid #887a4d;
+}
+.lol-summoner > div {
+  min-width: 109px;
+}
+.lol-summoner b {
+  display: block;
+  background: linear-gradient(#57275c, #2c173a);
+  border: 1px solid #6d5a79;
+  padding: 4px 10px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #e4d6eb;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lol-summoner > div > span {
+  font: 9px Tahoma;
+  color: #859cb4;
+  display: block;
+  margin: 5px 0 4px;
+}
+.lol-summoner > div > i {
+  height: 4px;
+  border: 1px solid #74754e;
+  background: #09131d;
+  display: block;
+}
+.lol-summoner > div > i > em {
+  height: 100%;
+  display: block;
+  background: #a3945d;
+}
+.lol-currency {
+  padding: 3px 0 3px 7px;
+  font: 11px Tahoma;
+  min-width: 95px;
+}
+.lol-currency > span {
+  color: #e1c17b;
+  display: block;
+  white-space: nowrap;
+}
+.lol-currency > small {
+  display: block;
+  color: #9fb4c9;
+  font-size: 10px;
+  margin-top: 9px;
+  white-space: nowrap;
+}
+.lol-client-tabs {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  background: linear-gradient(#182f45, #0b1b2b);
+  border-bottom: 1px solid #3b5872;
+  min-height: 32px;
+  padding: 0 14px;
+  flex-shrink: 0;
+}
+.lol-client-tabs > button {
+  color: #88aecf;
+  font:
+    12px '宋体',
+    sans-serif;
+  padding: 9px 17px;
+  border-right: 1px solid #2d435b;
+}
+.lol-client-tabs > button.selected {
+  color: #ddca91;
+  background: linear-gradient(#334b64, #182e44);
+  box-shadow: inset 0 -2px #b1a06c;
+}
+.lol-client-tabs > span {
+  margin-left: auto;
+  font:
+    9px '宋体',
+    sans-serif;
+  color: #6389a6;
+  white-space: nowrap;
+  padding: 0 9px;
+}
+.lol-client-tabs > .lol-box-shortcut {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #bdac72;
+  border-right: 0;
+  padding: 8px;
+}
+.lol-client-body {
+  flex: 1;
+  min-height: 0;
+  padding: 13px;
+  overflow: auto;
+  background: radial-gradient(at 20% 30%, #19385044, transparent 70%);
+}
+.lol-lobby {
+  display: grid;
+  grid-template-columns: 146px minmax(350px, 1fr) 190px;
+  gap: 13px;
+  min-height: 100%;
+  align-items: start;
+}
+.lol-lobby-left,
+.lol-lobby-right > section,
+.lol-news {
+  background: #071522db;
+  border: 1px solid #38556f;
+  box-shadow: inset 0 0 0 1px #020b13;
+}
+.lol-lobby h3 {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #bdcad6;
+  background: linear-gradient(#223a52, #12283d);
+  border-bottom: 1px solid #314e66;
+  padding: 9px 9px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.lol-free-heroes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  padding: 12px;
+}
+.lol-free-heroes > button {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+.lol-free-heroes .hero-portrait {
+  width: 49px;
+  height: 49px;
+  border-color: #5e7590;
+}
+.lol-free-heroes > button:hover .hero-portrait {
+  border-color: #f2d17e;
+  box-shadow: 0 0 7px #d2ac604d;
+}
+.lol-mode {
+  padding: 12px 9px;
+  width: 100%;
+  color: #8fb2cd;
+  text-align: center;
+  font:
+    11px '宋体',
+    sans-serif;
+}
+.lol-mode img {
+  width: 100%;
+  height: 65px;
+  object-fit: cover;
+  border: 1px solid #5b745b;
+  margin-bottom: 10px;
+}
+.lol-mode b {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #b8caac;
+}
+.lol-mode small {
+  display: block;
+  font-size: 9px;
+  color: #617c96;
+  margin-top: 6px;
+}
+.lol-rank-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 17px 0;
+  border-top: 1px solid #263d52;
+  color: #a69666;
+}
+.lol-rank-panel strong {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #bfb287;
+}
+.lol-rank-panel b {
+  font: 26px Georgia;
+  color: #d7c58c;
+}
+.lol-rank-panel small {
+  font-size: 9px;
+  color: #6a8aa5;
+}
+.lol-featured {
+  height: 222px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #6a7281;
+  box-shadow:
+    inset 0 0 0 1px #0b1e30,
+    0 0 0 1px #000;
+}
+.lol-featured > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 38%;
+}
+.lol-featured:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #081b2dca, transparent 88%), linear-gradient(0deg, #081725d1, transparent 60%);
+}
+.lol-featured > div {
+  position: absolute;
+  left: 23px;
+  bottom: 23px;
+  right: 20px;
+  z-index: 2;
+}
+.lol-featured span {
+  font: 9px Georgia;
+  letter-spacing: 2px;
+  color: #c5c6af;
+  text-shadow: 0 1px #000;
+}
+.lol-featured h1 {
+  font:
+    25px '宋体',
+    sans-serif;
+  color: #f5dfae;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 3px #07111b;
+  margin: 13px 0 10px;
+}
+.lol-featured p {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #9fb1c6;
+  text-shadow: 0 1px 2px #000;
+  margin-bottom: 16px;
+}
+.lol-featured button {
+  background: linear-gradient(#426e98, #163a5e);
+  border: 1px solid #7890a7;
+  box-shadow: inset 0 0 0 1px #274864;
+  color: #d2e3f1;
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 7px 14px;
+}
+.lol-news {
+  margin-top: 13px;
+}
+.lol-news > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lol-news > h3 > span {
+  font: 9px Tahoma;
+  color: #547a9a;
+  letter-spacing: 0;
+}
+.lol-news > article {
+  display: flex;
+  gap: 12px;
+  padding: 13px 12px;
+  border-bottom: 1px solid #1f3448;
+}
+.lol-news > article:last-child {
+  border-bottom: 0;
+}
+.lol-news > article .hero-portrait {
+  width: 46px;
+  height: 46px;
+  border-color: #4c6580;
+}
+.lol-news > article button {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #239ccf;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 7px;
+}
+.lol-news p {
+  font:
+    11px/1.8 '宋体',
+    sans-serif;
+  color: #6d91af;
+}
+.lol-lobby-right > section {
+  margin-bottom: 13px;
+}
+.lol-profile-summary {
+  text-align: center;
+  padding: 13px 0 8px;
+}
+.lol-profile-summary > .hero-portrait {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 9px;
+  border-color: #a49970;
+}
+.lol-profile-summary > b {
+  display: block;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #d7cdaa;
+}
+.lol-profile-summary > small {
+  font:
+    9px '宋体',
+    sans-serif;
+  display: block;
+  color: #668ca8;
+  margin-top: 5px;
+}
+.lol-lobby-right dl {
+  padding: 2px 13px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  font:
+    10px '宋体',
+    sans-serif;
+  margin: 0;
+  color: #6f92b1;
+}
+.lol-lobby-right dd {
+  margin: 0;
+  text-align: right;
+  font: 11px Tahoma;
+  color: #c0c5b3;
+}
+.lol-small-blue {
+  display: block;
+  width: calc(100% - 22px);
+  margin: 0 11px 12px;
+  background: linear-gradient(#345779, #183452);
+  border: 1px solid #4f6e8b;
+  color: #a8c4db;
+  padding: 6px;
+  font:
+    10px '宋体',
+    sans-serif;
+}
+.lol-friends > button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  text-align: left;
+  color: #89b58d;
+  font:
+    11px '宋体',
+    sans-serif;
+  width: 100%;
+  border-bottom: 1px solid #152f44;
+}
+.lol-friends small {
+  font-size: 9px;
+  display: block;
+  color: #4c8764;
+  margin-top: 5px;
+}
+.lol-last-result.last-match {
+  display: block;
+  border: 1px solid #6a4b43;
+  margin-top: 0;
+  background: #2b1c1f;
+  padding: 12px;
+  color: #bd8e72;
+}
+.lol-last-result.last-match.won {
+  background: #18352e;
+  border-color: #3f6b60;
+  color: #8ab49b;
+}
+.lol-last-result > b {
+  font:
+    18px '宋体',
+    sans-serif;
+  display: block;
+  color: inherit;
+}
+.lol-last-result > button {
+  display: block;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #728da4;
+  padding: 10px 0 0;
+}
+.lol-client-status {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 6px 12px;
+  min-height: 24px;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #4d7894;
+  border-top: 1px solid #3a526c;
+  background: linear-gradient(#1d3046, #0e1e30);
+  flex-shrink: 0;
+}
+.lol-client-status > span:nth-child(2) {
+  margin-left: auto;
+}
+.lol-client-status > button {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #96b6cc;
+  padding: 0;
+  border-left: 1px solid #344d66;
+  padding-left: 10px;
+}
+.lol-blue-button.button,
+.lol-small-blue {
+  background: linear-gradient(#365f8a, #163757 51%, #102940 52%, #2d5271);
+  border: 1px solid #7088a2;
+  color: #d6e7f4;
+  box-shadow: inset 0 0 0 1px #17354e;
+  font:
+    12px '宋体',
+    sans-serif;
+  padding: 8px 22px;
+}
+.lol-red-button.button {
+  color: #ffe3a1;
+  background: linear-gradient(#b84b2c, #6c1f12);
+  border: 1px solid #b5814a;
+  box-shadow: inset 0 0 0 1px #4c210d;
+  font:
+    14px '宋体',
+    sans-serif;
+  text-shadow: 0 1px #381a10;
+  padding: 10px 21px;
+}
+.lol-champion-select > h2 {
+  font:
+    15px '宋体',
+    sans-serif;
+  color: #acbac7;
+  padding: 13px 11px 17px;
+  border-bottom: 1px solid #344c62;
+  margin-bottom: 17px;
+}
+.lol-select-columns {
+  display: grid;
+  grid-template-columns: minmax(350px, 1fr) 220px;
+  gap: 25px;
+}
+.lol-hero-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+.lol-hero-search input {
+  border: 1px solid #3d5b75;
+  border-radius: 0;
+  background: #061421;
+  color: #9cbbd3;
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 6px 9px;
+  box-shadow: inset 0 0 3px #000;
+  width: 190px;
+}
+.lol-hero-search span {
+  color: #4d7899;
+  font-size: 10px;
+}
+.lol-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px 9px;
+  padding: 4px;
+}
+.lol-hero-grid > button {
+  padding: 0 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #a1b5c6;
+  border: 1px solid transparent;
+}
+.lol-hero-grid .hero-portrait {
+  width: 67px;
+  height: 67px;
+  border-color: #5d7190;
+  border-width: 2px;
+  box-shadow: 0 1px 5px #0008;
+}
+.lol-hero-grid strong {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #93aecd;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+.lol-hero-grid small {
+  font:
+    9px '宋体',
+    sans-serif;
+  color: #486e8d;
+  display: block;
+  margin-top: 4px;
+}
+.lol-hero-grid > button.selected .hero-portrait {
+  border-color: #e5cb78;
+  box-shadow:
+    0 0 10px #c7a45a88,
+    inset 0 0 0 2px #745727;
+}
+.lol-role-select {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 4px;
+  margin-top: 17px;
+  border-top: 1px solid #2b4359;
+}
+.lol-role-select > span {
+  font-size: 11px;
+  color: #6a91b1;
+  margin-right: auto;
+}
+.lol-role-select > button {
+  font:
+    11px '宋体',
+    sans-serif;
+  border: 1px solid #3a5570;
+  background: #11283d;
+  color: #7f9ab2;
+  padding: 6px 9px;
+  white-space: nowrap;
+}
+.lol-role-select > button.selected {
+  border-color: #ac9964;
+  color: #dbcc92;
+  background: #403b2e55;
+}
+.lol-selected-hero {
+  display: flex;
+  gap: 15px;
+  padding: 17px 12px;
+  background: #1026379c;
+  border: 1px solid #2e4b64;
+}
+.lol-selected-hero > .hero-portrait {
+  width: 58px;
+  height: 58px;
+}
+.lol-selected-hero h3 {
+  font:
+    14px '宋体',
+    sans-serif;
+  color: #c9c8aa;
+  margin-bottom: 8px;
+}
+.lol-selected-hero p {
+  font:
+    11px/1.9 '宋体',
+    sans-serif;
+  color: #7297b3;
+}
+.lol-selected-hero small {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #547893;
+  display: block;
+  margin-top: 9px;
+}
+.lol-select-columns > aside {
+  padding: 10px 12px;
+  border-left: 1px solid #2b4257;
+}
+.lol-select-columns > aside > h3 {
+  font:
+    13px '宋体',
+    sans-serif;
+  color: #b6b89d;
+  margin-bottom: 17px;
+}
+.lol-party-member {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 9px;
+  width: 100%;
+  border: 1px solid #364e62;
+  background: #12283b;
+  color: #a5bac9;
+}
+.lol-party-member.selected {
+  border-color: #95865a;
+  background: #3e3b2c44;
+}
+.lol-party-member > span {
+  font:
+    12px '宋体',
+    sans-serif;
+  text-align: left;
+}
+.lol-party-member small {
+  font-size: 9px;
+  color: #607f96;
+  margin-top: 7px;
+  display: block;
+  line-height: 1.5;
+}
+.lol-party-member > b {
+  margin-left: auto;
+  color: #c1af70;
+  font: 18px Arial;
+}
+.lol-select-columns > aside > p {
+  font:
+    11px/1.9 '宋体',
+    sans-serif;
+  color: #5c82a0;
+  margin: 15px 0;
+}
+.lol-match-resources {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 16px 0;
+  border-top: 1px solid #2c4356;
+  border-bottom: 1px solid #2c4356;
+  margin-bottom: 23px;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #6189aa;
+}
+.lol-match-resources > span {
+  display: flex;
+  justify-content: space-between;
+}
+.lol-match-resources b {
+  font: 11px Tahoma;
+  color: #c0c2a9;
+}
+.lol-select-columns > aside > .button {
+  width: 100%;
+}
+.lol-select-columns > aside > small {
+  font:
+    9px '宋体',
+    sans-serif;
+  color: #4f748f;
+  display: block;
+  text-align: center;
+  margin: 13px 0;
+}
+.lol-cancel {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #557b99;
+  display: block;
+  margin: 18px auto 5px;
+  padding: 0;
+}
+.lol-queue-screen {
+  padding: 20px 20px 25px;
+  text-align: center;
+  color: #9cb5c7;
+  min-height: 440px;
+  background: radial-gradient(ellipse at 50% 45%, #204c6a44, transparent 65%);
+}
+.lol-rift-preview {
+  width: 135px;
+  height: 135px;
+  position: relative;
+  margin: 0 auto 22px;
+  border: 2px solid #897a52;
+  box-shadow:
+    0 0 0 3px #152e43,
+    0 0 22px #1b516b77;
+}
+.lol-rift-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lol-rift-preview > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #071f31dd;
+  padding: 7px;
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #a8c0c6;
+}
+.lol-queue-screen h2 {
+  font:
+    25px '宋体',
+    sans-serif;
+  color: #d9cea7;
+  letter-spacing: 2px;
+  margin: 17px 0;
+}
+.lol-queue-screen > p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #6c95b4;
+}
+.lol-queue-player {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 0 26px;
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #a8bdd0;
+}
+.lol-queue-player > .hero-portrait,
+.lol-queue-player > .avatar {
+  width: 48px;
+  height: 48px;
+}
+.lol-queue-player > span {
+  text-align: left;
+  margin-right: 20px;
+}
+.lol-queue-player small {
+  display: block;
+  font-size: 10px;
+  color: #5b829f;
+  margin-top: 8px;
+}
+.lol-records,
+.lol-personal-profile,
+.lol-help,
+.lol-champions-page {
+  padding: 15px 21px;
+  color: #87a6c0;
+}
+.lol-records > h2,
+.lol-personal-profile > h2,
+.lol-help > h2,
+.lol-champions-page > h2 {
+  font:
+    21px '宋体',
+    sans-serif;
+  color: #d5c89e;
+  margin-bottom: 22px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.lol-records > p {
+  font-size: 11px;
+  color: #6189a8;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.lol-match-record {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 14px 12px;
+  background: linear-gradient(90deg, #283727, #142c35);
+  border: 1px solid #455d55;
+  margin-bottom: 11px;
+}
+.lol-match-record.defeat {
+  background: linear-gradient(90deg, #3f2829, #212731);
+  border-color: #654347;
+}
+.lol-match-record > .hero-portrait {
+  width: 49px;
+  height: 49px;
+}
+.lol-match-record > div {
+  flex: 1;
+  min-width: 0;
+}
+.lol-match-record strong {
+  font:
+    16px '宋体',
+    sans-serif;
+  color: #a7c89d;
+  margin-right: 15px;
+}
+.lol-match-record.defeat strong {
+  color: #c89280;
+}
+.lol-match-record small {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #5e83a0;
+  line-height: 1.7;
+}
+.lol-match-record p {
+  font:
+    11px/1.8 '宋体',
+    sans-serif;
+  color: #8cabbf;
+  margin: 8px 0;
+}
+.lol-match-record > b {
+  font: 21px Georgia;
+  color: #bfb386;
+  white-space: nowrap;
+}
+.lol-empty {
+  padding: 60px 15px;
+  text-align: center;
+  color: #487091 !important;
+}
+.lol-profile-main {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 20px;
+  background: #0d263b;
+  border: 1px solid #37556e;
+}
+.lol-profile-main > .hero-portrait {
+  width: 90px;
+  height: 90px;
+  border: 3px solid #ae9c63;
+}
+.lol-profile-main > span > strong {
+  font:
+    20px '宋体',
+    sans-serif;
+  color: #b3bfd0;
+  display: block;
+}
+.lol-profile-main small {
+  display: block;
+  font: 10px Tahoma;
+  color: #587e9a;
+  margin: 12px 0;
+}
+.lol-profile-main b {
+  font:
+    16px '宋体',
+    sans-serif;
+  color: #c5b483;
+}
+.lol-profile-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+  padding: 30px 0;
+  margin-bottom: 15px;
+}
+.lol-profile-numbers > div {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #547d9c;
+  border-right: 1px solid #314d64;
+  text-align: center;
+}
+.lol-profile-numbers b {
+  display: block;
+  font: 27px Georgia;
+  color: #b6c0b0;
+  margin-bottom: 13px;
+}
+.lol-help h3 {
+  font:
+    14px '宋体',
+    sans-serif;
+  color: #b0b6a1;
+  margin: 22px 0 13px;
+}
+.lol-help p {
+  font:
+    12px/2 '宋体',
+    sans-serif;
+  color: #6f94b1;
+  margin-bottom: 20px;
+}
+.lol-champions-page .lol-hero-grid {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 680px;
+}
+.lol-hero-description {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  border: 1px solid #3c5870;
+  background: #0d2639;
+  padding: 19px;
+  margin: 24px 0;
+}
+.lol-hero-description > .hero-portrait {
+  width: 71px;
+  height: 71px;
+}
+.lol-hero-description > span {
+  flex: 1;
+}
+.lol-hero-description h2 {
+  font:
+    17px '宋体',
+    sans-serif;
+  color: #c5bea2;
+  margin-bottom: 10px;
+}
+.lol-hero-description p {
+  font:
+    12px/1.8 '宋体',
+    sans-serif;
+  color: #698eaa;
+}
+.lol-hero-description small {
+  font-size: 10px;
+  color: #436d8d;
+  display: block;
+  margin-top: 10px;
+}
+.lol-hero-description > button {
+  color: #d2c28b;
+  font:
+    11px '宋体',
+    sans-serif;
+  border: 1px solid #7b795c;
+  background: #4b482f44;
+  padding: 7px 13px;
+  white-space: nowrap;
+}
+.lol-champions-page > h3 {
+  font:
+    13px '宋体',
+    sans-serif;
+  color: #b1b49b;
+  margin: 10px 0 16px;
+}
+.lol-items {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.lol-items > span {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #715b35;
+  background: #141e24;
+  box-shadow: 0 0 0 1px #010a10;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.lol-items img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lol-match-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: linear-gradient(#25374b, #0f1e2e);
+  border: 1px solid #55657a;
+  padding: 8px;
+  color: #7eb9e0;
+  font:
+    12px '宋体',
+    sans-serif;
+  min-height: 31px;
+}
+.lol-match-score > span:nth-of-type(2) {
+  color: #bc84d5;
+}
+.lol-match-score > b {
+  font: 12px Georgia;
+  color: #b9bda9;
+}
+.lol-match-score > small {
+  font-size: 10px;
+  color: #8199ae;
+  margin-left: 20px;
+}
+.lol-match-score > time {
+  font: 11px Tahoma;
+  color: #c0b383;
+  margin-left: auto;
+}
+.lol-tactical-map {
+  height: 345px;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  background: #223d2f;
+  border: 1px solid #35482e;
+}
+.lol-tactical-map > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  filter: brightness(0.73) saturate(0.8);
+  image-rendering: auto;
+}
+.lol-tactical-map:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 50px #061b1388;
+  pointer-events: none;
+}
+.map-hero {
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  border: 2px solid #68b9e7;
+  box-shadow: 0 0 8px #41b5ff91;
+  overflow: hidden;
+}
+.map-hero.purple-team {
+  border-color: #cf89e9;
+  box-shadow: 0 0 8px #ba61eb88;
+}
+.map-hero > .hero-portrait {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.lol-battle-message {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  font:
+    17px '宋体',
+    sans-serif;
+  letter-spacing: 2px;
+  color: #ddcf8c;
+  text-shadow:
+    1px 2px 4px #000,
+    0 0 5px #000;
+}
+.lol-decision-panel {
+  position: absolute;
+  z-index: 3;
+  bottom: 18px;
+  left: 11%;
+  right: 11%;
+  border: 1px solid #938960;
+  background: linear-gradient(#0c1d2dee, #07131dec);
+  box-shadow:
+    0 0 0 2px #08101a,
+    0 5px 22px #0008;
+  padding: 12px 14px;
+}
+.lol-decision-panel h3 {
+  font:
+    14px '宋体',
+    sans-serif;
+  color: #d2c595;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lol-decision-panel h3 > span {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #739ab8;
+}
+.lol-decision-panel > p {
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #557e9d;
+  margin: 8px 0 11px;
+}
+.lol-decision-panel > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+.lol-decision-panel > div > button {
+  background: linear-gradient(#274662, #102e48);
+  border: 1px solid #56728b;
+  box-shadow: inset 0 0 0 1px #10263a;
+  padding: 9px 9px;
+  text-align: left;
+  min-height: 64px;
+}
+.lol-decision-panel > div > button:hover {
+  border-color: #cab373;
+  background: linear-gradient(#385569, #203b50);
+}
+.lol-decision-panel strong {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #d1d6c3;
+  display: block;
+  margin-bottom: 7px;
+}
+.lol-decision-panel small {
+  font:
+    9px/1.7 '宋体',
+    sans-serif;
+  color: #6f94ad;
+  display: block;
+}
+.lol-game-hud {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 90px;
+  border: 2px solid #6f6d52;
+  background: linear-gradient(#25302d, #101d20 40%, #172924);
+  box-shadow: inset 0 0 0 2px #0d1b1d;
+  padding: 8px 13px;
+  position: relative;
+}
+.lol-hud-portrait {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  border: 2px solid #a19a66;
+  flex-shrink: 0;
+}
+.lol-hud-portrait > .hero-portrait {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.lol-hud-portrait > span {
+  position: absolute;
+  right: -4px;
+  bottom: -5px;
+  background: #14241f;
+  border: 1px solid #b3a367;
+  color: #e0d6aa;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  font: 10px Tahoma;
+}
+.lol-hud-bars {
+  width: 141px;
+  flex-shrink: 0;
+}
+.lol-hud-bars > b {
+  display: block;
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #bcc4aa;
+  margin-bottom: 7px;
+}
+.lol-hud-bars > span {
+  display: block;
+  width: 100%;
+  height: 10px;
+  border: 1px solid #091b15;
+  background: #101c12;
+  margin-bottom: 3px;
+}
+.lol-hud-bars > span > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(#70a448, #37702f);
+}
+.lol-hud-bars > span.mana > i {
+  background: linear-gradient(#517db6, #254b7d);
+}
+.lol-hud-bars > small {
+  font: 8px Tahoma;
+  color: #5f806d;
+  display: block;
+  margin-top: 5px;
+}
+.lol-abilities {
+  display: flex;
+  gap: 5px;
+}
+.lol-abilities > div {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #8e8759;
+  box-shadow: inset 0 0 0 1px #1d2f2e;
+}
+.lol-abilities b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #e2d5a4;
+  font: 9px Tahoma;
+  background: #0e1e20c9;
+  padding: 1px 3px;
+}
+.lol-abilities small {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font: 8px Tahoma;
+  color: #b6cfb0;
+  padding: 1px;
+}
+.lol-abilities > div.summoner-spells {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: 0;
+  gap: 3px;
+  width: 22px;
+  margin-left: 2px;
+}
+.summoner-spells > span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 17px;
+  background: #aa7b2a;
+  border: 1px solid #d2b66c;
+  color: #f7df91;
+  font: 9px Tahoma;
+}
+.lol-game-hud .lol-items {
+  flex-wrap: wrap;
+  width: 105px;
+  gap: 4px;
+  margin-left: auto;
+}
+.lol-game-hud .lol-items > span {
+  width: 29px;
+  height: 29px;
+}
+.lol-mini-map {
+  width: 85px;
+  height: 76px;
+  border: 2px solid #777254;
+  margin-left: 1px;
+  flex-shrink: 0;
+}
+.lol-mini-map > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lol-leave {
+  display: block;
+  margin: 10px auto 0;
+  color: #4a6c83;
+  font:
+    9px '宋体',
+    sans-serif;
+}
+.lol-battle-view {
+  min-width: 650px;
+}
+/* 多玩盒子：战绩工具和英雄资料。 */
+.window-gamebox .window-titlebar {
+  background: linear-gradient(#d8e7f3, #a4c1db);
+  font-size: 12px;
+}
+.league-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: #eef2f5;
+  color: #3c4c5a;
+  font:
+    12px '宋体',
+    sans-serif;
+}
+.box-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 18px;
+  background: linear-gradient(#eff6fc, #d9e7f3);
+  border-bottom: 1px solid #a9c0d4;
+  min-height: 77px;
+  flex-shrink: 0;
+}
+.box-header > .app-icon {
+  width: 47px;
+  height: 47px;
+}
+.box-header > span > b {
+  font:
+    22px 'Microsoft YaHei',
+    sans-serif;
+  color: #405674;
+  letter-spacing: 1px;
+}
+.box-header small {
+  display: block;
+  font: 10px Tahoma;
+  color: #8da5b7;
+  margin-top: 7px;
+  letter-spacing: 0.5px;
+}
+.box-header > form {
+  margin-left: auto;
+  display: flex;
+}
+.box-header input {
+  border-radius: 0;
+  border: 1px solid #8daac2;
+  background: #fff;
+  padding: 6px 9px;
+  font:
+    11px '宋体',
+    sans-serif;
+  width: 166px;
+  box-shadow: inset 0 1px 2px #7896ad2e;
+}
+.box-header form > button {
+  color: white;
+  background: linear-gradient(#7c9eba, #4e779c);
+  border: 1px solid #658aa8;
+  border-left: 0;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+.box-tabs {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(#fbfcfd, #dce5ee);
+  border-bottom: 1px solid #a9bbc9;
+  min-height: 37px;
+  flex-shrink: 0;
+  padding: 0 15px;
+}
+.box-tabs > button {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #4f6c87;
+  padding: 12px 22px 10px;
+  border-right: 1px solid #c9d4de;
+  border-bottom: 2px solid transparent;
+}
+.box-tabs > button.selected {
+  color: #d87925;
+  border-bottom-color: #e69a49;
+  background: #fffaf3;
+}
+.box-tabs > .box-launch {
+  margin-left: auto;
+  color: #fff;
+  background: linear-gradient(#eba64b, #cb7d24);
+  border: 1px solid #b17735;
+  font-size: 11px;
+  padding: 6px 13px;
+  box-shadow: inset 0 1px #ffcc88;
+  border-radius: 2px;
+}
+.box-body {
+  flex: 1;
+  min-height: 0;
+  padding: 19px 21px;
+}
+.box-player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #c9d9e5;
+  margin-bottom: 19px;
+}
+.box-player > .hero-portrait {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #c9b17c;
+}
+.box-player > div {
+  flex: 1;
+}
+.box-player h2 {
+  font:
+    18px 'Microsoft YaHei',
+    sans-serif;
+  color: #395a76;
+}
+.box-player h2 > span {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #8b9caa;
+  margin-left: 15px;
+}
+.box-player p {
+  font-size: 12px;
+  color: #859bae;
+  margin-top: 10px;
+}
+.box-player p b {
+  font: 19px Tahoma;
+  color: #c2813c;
+  margin-right: 10px;
+}
+.box-player > div > small {
+  font-size: 10px;
+  color: #a8b6c2;
+  display: block;
+  margin-top: 9px;
+}
+.box-player > aside {
+  border-left: 1px solid #e3eaf0;
+  padding: 5px 20px;
+  text-align: center;
+}
+.box-player > aside > strong {
+  font: 31px Georgia;
+  color: #8ba071;
+}
+.box-player > aside > small {
+  font-size: 10px;
+  color: #9cabb7;
+  display: block;
+  margin-top: 9px;
+}
+.box-data-tabs {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  border-bottom: 1px solid #b7cada;
+  padding: 0 4px 11px;
+  color: #54718a;
+  margin-bottom: 13px;
+}
+.box-data-tabs > b {
+  font-size: 13px;
+  color: #3f647f;
+}
+.box-data-tabs > span {
+  font-size: 11px;
+  color: #91a2b0;
+}
+.box-data-tabs > button {
+  margin-left: auto;
+  font-size: 11px;
+  color: #c58940;
+}
+.box-record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.box-record-list > article {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid #c3d5d8;
+  background: linear-gradient(90deg, #edf4e8, #fff);
+}
+.box-record-list > article.loss {
+  background: linear-gradient(90deg, #f7e8e5, #fff);
+  border-color: #dac2bd;
+}
+.box-result {
+  font:
+    16px '宋体',
+    sans-serif;
+  color: #6c9a57;
+  text-align: center;
+  min-width: 44px;
+}
+.loss .box-result {
+  color: #bc7d69;
+}
+.box-result > small {
+  font: 9px Tahoma;
+  display: block;
+  margin-top: 7px;
+  color: #8eac83;
+}
+.loss .box-result > small {
+  color: #bd9d95;
+}
+.box-record-list .hero-portrait {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #c2bda0;
+}
+.box-record-list > article > div {
+  flex: 1;
+  min-width: 0;
+}
+.box-record-list b {
+  font:
+    12px '宋体',
+    sans-serif;
+  color: #52758f;
+}
+.box-record-list p {
+  font:
+    10px/1.8 '宋体',
+    sans-serif;
+  color: #8fa3b0;
+  margin: 8px 0 5px;
+}
+.box-record-list > article > div > small {
+  font:
+    9px/1.7 '宋体',
+    sans-serif;
+  color: #adbbc5;
+  display: block;
+}
+.box-record-list strong {
+  font: 23px Georgia;
+  color: #a28d5f;
+  white-space: nowrap;
+}
+.box-empty {
+  text-align: center;
+  padding: 50px 25px;
+  color: #a5b4bf;
+}
+.box-empty h3 {
+  font:
+    18px 'Microsoft YaHei',
+    sans-serif;
+  font-weight: 400;
+  color: #718b9c;
+  margin-top: 20px;
+}
+.box-empty p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #9fb0bd;
+  margin: 15px 0 23px;
+}
+.box-empty .button {
+  font:
+    12px '宋体',
+    sans-serif;
+}
+.box-guides {
+  display: flex;
+  gap: 21px;
+  min-height: 390px;
+}
+.box-guides > aside {
+  width: 151px;
+  border: 1px solid #c3d4e1;
+  background: #fff;
+  flex-shrink: 0;
+}
+.box-guides > aside > button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 8px 10px;
+  color: #66829b;
+  font:
+    11px '宋体',
+    sans-serif;
+  border-bottom: 1px solid #e4ebf1;
+}
+.box-guides > aside > button.selected {
+  background: linear-gradient(#fff6e6, #f9e5c2);
+  color: #a57b3c;
+  border-bottom-color: #ead8ba;
+}
+.box-guides > aside .hero-portrait {
+  width: 29px;
+  height: 29px;
+  border-color: #bbc4c8;
+}
+.box-guides > section {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #cad8e3;
+  padding: 20px;
+}
+.box-hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e1e9ef;
+}
+.box-hero-heading > .hero-portrait {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #a6b7c4;
+}
+.box-hero-heading h2 {
+  font:
+    19px 'Microsoft YaHei',
+    sans-serif;
+  color: #597c97;
+}
+.box-hero-heading p {
+  font:
+    11px '宋体',
+    sans-serif;
+  color: #93a9b9;
+  margin-top: 11px;
+  line-height: 1.7;
+}
+.box-guides h3 {
+  font:
+    13px '宋体',
+    sans-serif;
+  color: #6787a0;
+  font-weight: 600;
+  margin: 18px 0 14px;
+  border-left: 3px solid #e0a559;
+  padding-left: 8px;
+}
+.box-guides > section > p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #8fa4b3;
+  margin-bottom: 19px;
+}
+.box-guides .lol-items > span {
+  width: 42px;
+  height: 42px;
+  border-color: #a7b9c5;
+  box-shadow: none;
+}
+.box-guides ol {
+  font:
+    11px/2.1 '宋体',
+    sans-serif;
+  color: #93a7b5;
+  padding-left: 19px;
+  margin: 18px 0 23px;
+}
+.box-guides .button {
+  font-size: 11px;
+}
+.box-settings {
+  background: white;
+  border: 1px solid #cad9e4;
+  padding: 25px;
+  color: #6e8b9f;
+  min-height: 350px;
+}
+.box-settings h2 {
+  font:
+    19px 'Microsoft YaHei',
+    sans-serif;
+  color: #567791;
+  margin-bottom: 26px;
+}
+.box-settings > label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font:
+    13px '宋体',
+    sans-serif;
+  color: #65889d;
+}
+.box-settings input {
+  accent-color: #5e92b5;
+}
+.box-settings > p {
+  font:
+    12px/1.9 '宋体',
+    sans-serif;
+  color: #92a9b9;
+  margin: 18px 0 25px;
+}
+.box-settings h3 {
+  font:
+    13px '宋体',
+    sans-serif;
+  font-weight: 600;
+  color: #708da1;
+}
+.box-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 29px;
+  padding: 7px 14px;
+  border-top: 1px solid #b6cada;
+  background: linear-gradient(#f3f8fc, #dce9f3);
+  font:
+    10px '宋体',
+    sans-serif;
+  color: #85a0b6;
+  flex-shrink: 0;
+}
+.box-footer > button {
+  color: #c6863f;
+  font:
+    11px '宋体',
+    sans-serif;
+  padding: 0;
+}
+@media (max-width: 1100px) {
+  .windows-seven .desktop-shortcuts {
+    grid-template-rows: repeat(8, 80px);
+    gap: 0 2px;
+  }
+  .windows-seven .desktop-shortcut {
+    width: 72px;
+    font-size: 11px;
+    min-height: 78px;
+  }
+  .windows-seven .app-icon.large {
+    width: 43px;
+    height: 43px;
+  }
+  .win-sticky-note {
+    left: 166px;
+    top: 29px;
+    width: 210px;
+  }
+  .aero-window {
+    max-width: calc(100vw - 160px);
+  }
+  .window-chat:not(.conversation-window) {
+    max-width: 285px;
+  }
+  .window-games {
+    max-width: calc(100vw - 164px);
+  }
+  .lol-header-ornament {
+    display: none;
+  }
+  .lol-client-header {
+    gap: 11px;
+    padding: 7px 13px;
+  }
+  .lol-home-logo {
+    width: 120px;
+  }
+  .lol-play {
+    width: 127px;
+  }
+  .lol-summoner > div {
+    min-width: 96px;
+  }
+  .lol-currency {
+    font-size: 10px;
+    min-width: 82px;
+  }
+  .lol-lobby {
+    grid-template-columns: 115px minmax(290px, 1fr) 157px;
+    gap: 10px;
+  }
+  .lol-free-heroes {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+  .lol-free-heroes .hero-portrait {
+    width: 40px;
+    height: 40px;
+  }
+  .lol-lobby h3 {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .lol-featured {
+    height: 210px;
+  }
+  .lol-featured h1 {
+    font-size: 23px;
+  }
+  .lol-featured > div {
+    left: 18px;
+    bottom: 20px;
+  }
+  .lol-news p {
+    font-size: 10px;
+  }
+  .lol-news article > button {
+    font-size: 11px;
+  }
+  .lol-news > article .hero-portrait {
+    width: 39px;
+    height: 39px;
+  }
+  .lol-client-tabs > button {
+    font-size: 11px;
+    padding: 9px 12px;
+  }
+  .lol-client-tabs > span {
+    font-size: 8px;
+  }
+  .lol-select-columns {
+    grid-template-columns: minmax(320px, 1fr) 190px;
+    gap: 15px;
+  }
+  .lol-hero-grid .hero-portrait {
+    width: 58px;
+    height: 58px;
+  }
+  .lol-hero-grid {
+    gap: 13px 6px;
+  }
+  .lol-role-select {
+    gap: 5px;
+  }
+  .lol-role-select > span {
+    font-size: 10px;
+  }
+  .lol-role-select > button {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  .lol-select-columns > aside {
+    padding: 8px 8px 8px 13px;
+  }
+  .lol-hud-bars {
+    width: 120px;
+  }
+  .lol-game-hud {
+    gap: 9px;
+    padding: 7px 10px;
+  }
+  .lol-abilities > div {
+    width: 30px;
+    height: 32px;
+  }
+  .lol-game-hud .lol-items {
+    width: 90px;
+  }
+  .lol-game-hud .lol-items > span {
+    width: 25px;
+    height: 25px;
+  }
+  .lol-mini-map {
+    width: 70px;
+    height: 70px;
+  }
+  .renren-layout {
+    grid-template-columns: 130px minmax(300px, 1fr) 162px;
+    gap: 14px;
+    padding: 16px 15px;
+  }
+  .renren-logo {
+    font-size: 22px;
+  }
+  .renren-logo > span {
+    display: none;
+  }
+  .renren-bluebar {
+    gap: 17px;
+    padding: 0 15px;
+  }
+  .renren-top-search {
+    width: 155px;
+  }
+  .renren-profile .avatar {
+    width: 37px !important;
+    height: 37px !important;
+  }
+  .qzone-layout {
+    grid-template-columns: 155px minmax(280px, 1fr) 140px;
+    gap: 12px;
+    padding: 16px;
+  }
+  .qzone-tabs > button {
+    padding: 10px 17px;
+  }
+  .qzone-top {
+    gap: 17px;
+  }
+  .box-tabs > button {
+    padding: 12px 17px 10px;
+  }
+  .box-header > span > b {
+    font-size: 20px;
+  }
+  .box-header > form input {
+    width: 150px;
+  }
+  .box-player {
+    padding: 16px;
+  }
+  .box-guides {
+    gap: 15px;
+  }
+  .box-guides > aside {
+    width: 135px;
+  }
+  .box-guides > section {
+    padding: 17px;
+  }
+}
+@media (max-width: 800px) {
+  .aero-window {
+    left: 159px !important;
+    top: 28px !important;
+    width: calc(100vw - 170px) !important;
+    height: calc(100dvh - 86px) !important;
+    max-width: none;
+  }
+  .aero-window.window-chat:not(.conversation-window) {
+    left: auto !important;
+    right: 20px;
+    width: 280px !important;
+    top: 160px !important;
+    height: calc(100dvh - 215px) !important;
+    max-height: 600px;
+  }
+  .aero-window.maximized {
+    left: 0 !important;
+    top: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    height: calc(100dvh - 40px) !important;
+    max-height: none !important;
+    max-width: none !important;
+  }
+  .win-sticky-note {
+    left: 167px;
+    width: 206px;
+    top: 25px;
+    transform: rotate(-1deg);
+  }
+  .win-clock-gadget {
+    right: 85px;
+    top: 13px;
+  }
+  .analog-clock {
+    width: 111px;
+    height: 111px;
+    transform: scale(0.87);
+    transform-origin: 50% 0;
+    margin-bottom: -3px;
+  }
+  .lol-client-header {
+    height: 69px;
+    min-height: 69px;
+    gap: 10px;
+    padding: 6px 10px;
+  }
+  .lol-home-logo {
+    width: 110px;
+  }
+  .lol-wordmark b:first-child,
+  .lol-wordmark b:nth-of-type(2) {
+    font-size: 20px;
+  }
+  .lol-play {
+    width: 106px;
+    height: 48px;
+    font-size: 24px;
+  }
+  .lol-play > span {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .lol-summoner > .hero-portrait {
+    width: 36px;
+    height: 36px;
+  }
+  .lol-summoner > div {
+    min-width: 79px;
+  }
+  .lol-summoner b {
+    font-size: 10px;
+    max-width: 96px;
+    padding: 4px 6px;
+  }
+  .lol-summoner > div > span {
+    font-size: 8px;
+  }
+  .lol-currency {
+    display: none;
+  }
+  .lol-client-tabs {
+    padding: 0 6px;
+    gap: 0;
+  }
+  .lol-client-tabs > button {
+    padding: 8px 9px;
+    font-size: 10px;
+  }
+  .lol-client-tabs > span {
+    display: none;
+  }
+  .lol-client-tabs > .lol-box-shortcut {
+    margin-left: auto;
+    font-size: 9px;
+    padding: 8px;
+  }
+  .lol-lobby {
+    grid-template-columns: 94px minmax(250px, 1fr);
+    gap: 10px;
+  }
+  .lol-lobby-right {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 11px;
+    align-items: start;
+  }
+  .lol-lobby-right > section {
+    flex: 1;
+    min-width: 0;
+  }
+  .lol-lobby-right .lol-friends {
+    display: none;
+  }
+  .lol-profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    justify-content: center;
+    padding: 12px;
+  }
+  .lol-profile-summary > .hero-portrait {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
+  .lol-profile-summary > b {
+    font-size: 11px;
+  }
+  .lol-profile-summary > small {
+    margin: 0;
+  }
+  .lol-lobby-right dl {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .lol-lobby-right .lol-small-blue {
+    display: none;
+  }
+  .lol-lobby-right .lol-last-result {
+    width: 150px;
+    margin-bottom: 14px;
+  }
+  .lol-free-heroes {
+    gap: 7px;
+    padding: 9px 5px;
+  }
+  .lol-free-heroes .hero-portrait {
+    width: 34px;
+    height: 34px;
+  }
+  .lol-featured {
+    height: 210px;
+  }
+  .lol-featured h1 {
+    font-size: 21px;
+    line-height: 1.6;
+  }
+  .lol-featured p {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .lol-featured span {
+    font-size: 7px;
+  }
+  .lol-news > article {
+    padding: 12px 10px;
+    gap: 9px;
+  }
+  .lol-news > article .hero-portrait {
+    width: 34px;
+    height: 34px;
+  }
+  .lol-news > article button {
+    font-size: 11px;
+  }
+  .lol-news > article p {
+    font-size: 10px;
+  }
+  .lol-lobby h3 {
+    letter-spacing: 0;
+    font-size: 10px;
+  }
+  .lol-client-body {
+    padding: 10px;
+  }
+  .lol-select-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .lol-select-columns > aside {
+    border-left: 0;
+    border-top: 1px solid #2d465c;
+    padding: 17px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .lol-select-columns > aside > h3 {
+    width: 100%;
+    font-size: 12px;
+    margin: 0 0 3px;
+  }
+  .lol-party-member {
+    width: 200px;
+  }
+  .lol-select-columns > aside > p {
+    flex: 1;
+    font-size: 10px;
+    margin: 0;
+  }
+  .lol-match-resources {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 13px 0;
+  }
+  .lol-match-resources > span {
+    font-size: 10px;
+    gap: 9px;
+  }
+  .lol-select-columns > aside > .button {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .lol-select-columns > aside > small {
+    font-size: 8px;
+    margin: 0 auto;
+  }
+  .lol-hero-grid .hero-portrait {
+    width: 61px;
+    height: 61px;
+  }
+  .lol-champion-select > h2 {
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 10px 6px 14px;
+  }
+  .lol-selected-hero h3 {
+    font-size: 13px;
+  }
+  .lol-selected-hero p {
+    font-size: 10px;
+  }
+  .lol-role-select {
+    gap: 5px;
+  }
+  .lol-role-select > span {
+    font-size: 9px;
+  }
+  .lol-role-select > button {
+    font-size: 10px;
+    padding: 6px 7px;
+  }
+  .lol-battle-view {
+    min-width: 550px;
+  }
+  .lol-tactical-map {
+    height: 350px;
+  }
+  .lol-game-hud .lol-items {
+    display: none;
+  }
+  .lol-mini-map {
+    margin-left: auto;
+  }
+  .lol-decision-panel {
+    left: 7%;
+    right: 7%;
+  }
+  .lol-client-status {
+    font-size: 8px;
+    gap: 6px;
+    padding: 6px 9px;
+  }
+  .lol-client-status > button {
+    font-size: 8px;
+    padding-left: 8px;
+  }
+  .lol-client-status > span:nth-child(2) {
+    font-size: 8px;
+  }
+  .lol-hero-description {
+    gap: 13px;
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  .lol-hero-description h2 {
+    font-size: 15px;
+  }
+  .lol-hero-description p {
+    font-size: 11px;
+  }
+  .lol-hero-description > .hero-portrait {
+    width: 58px;
+    height: 58px;
+  }
+  .lol-hero-description > span {
+    min-width: 230px;
+  }
+  .lol-hero-description > button {
+    margin-left: auto;
+  }
+  .lol-champions-page .lol-hero-grid {
+    gap: 17px 9px;
+  }
+  .lol-records,
+  .lol-personal-profile,
+  .lol-help,
+  .lol-champions-page {
+    padding: 13px 12px;
+  }
+  .lol-match-record {
+    gap: 10px;
+    padding: 12px;
+  }
+  .lol-match-record > .hero-portrait {
+    width: 39px;
+    height: 39px;
+  }
+  .lol-match-record p {
+    font-size: 10px;
+  }
+  .lol-match-record small {
+    font-size: 8px;
+  }
+  .renren-layout {
+    grid-template-columns: 112px minmax(280px, 1fr);
+    gap: 14px;
+    padding: 16px 13px;
+  }
+  .renren-right {
+    display: none;
+  }
+  .renren-left {
+    padding-right: 10px;
+  }
+  .renren-profile {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .renren-bluebar {
+    gap: 13px;
+    padding: 0 12px;
+  }
+  .renren-logo {
+    font-size: 20px;
+  }
+  .renren-logo > .app-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .renren-bluebar > button {
+    font-size: 11px;
+  }
+  .renren-top-search {
+    width: 120px;
+  }
+  .renren-feed-tabs {
+    gap: 14px;
+  }
+  .renren-feed-tabs > button {
+    font-size: 11px;
+  }
+  .renren-feed-tabs small {
+    font-size: 8px;
+  }
+  .renren-publisher > div:last-child > span {
+    font-size: 8px;
+  }
+  .qzone-layout {
+    grid-template-columns: 145px minmax(270px, 1fr);
+    padding: 15px 14px;
+    gap: 13px;
+  }
+  .qzone-right {
+    display: none;
+  }
+  .qzone-tabs {
+    padding: 0 15px;
+  }
+  .qzone-tabs > button {
+    font-size: 11px;
+    padding: 10px 15px;
+  }
+  .qzone-cover {
+    padding: 20px 23px;
+    height: 185px;
+  }
+  .qzone-cover h1 {
+    font-size: 25px;
+  }
+  .qzone-user {
+    left: 23px;
+  }
+  .qzone-top {
+    padding: 0 15px;
+    gap: 15px;
+    font-size: 10px;
+  }
+  .qzone-top > button {
+    font-size: 10px;
+  }
+  .qzone-publisher > div > span {
+    font-size: 8px;
+  }
+  .box-header {
+    padding: 13px;
+    gap: 10px;
+  }
+  .box-header > span > b {
+    font-size: 18px;
+  }
+  .box-header small {
+    font-size: 8px;
+  }
+  .box-header > form input {
+    width: 110px;
+    font-size: 10px;
+  }
+  .box-header > form > button {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .box-header > .app-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .box-tabs {
+    padding: 0 8px;
+  }
+  .box-tabs > button {
+    font-size: 11px;
+    padding: 11px 13px 9px;
+  }
+  .box-tabs > .box-launch {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+  .box-body {
+    padding: 16px 15px;
+  }
+  .box-player {
+    padding: 14px;
+    gap: 12px;
+  }
+  .box-player > .hero-portrait {
+    width: 57px;
+    height: 57px;
+  }
+  .box-player h2 {
+    font-size: 16px;
+  }
+  .box-player h2 > span {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+  .box-player p {
+    font-size: 10px;
+  }
+  .box-player p b {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+  .box-player > aside {
+    padding: 5px 10px;
+  }
+  .box-player > aside > strong {
+    font-size: 26px;
+  }
+  .box-player > div > small {
+    font-size: 8px;
+  }
+  .box-player > aside > small {
+    font-size: 8px;
+  }
+  .box-guides > aside {
+    width: 115px;
+  }
+  .box-guides > aside > button {
+    font-size: 10px;
+    padding: 8px;
+    gap: 7px;
+  }
+  .box-guides > aside .hero-portrait {
+    width: 25px;
+    height: 25px;
+  }
+  .box-guides {
+    gap: 12px;
+  }
+  .box-guides > section {
+    padding: 14px;
+  }
+  .box-hero-heading {
+    gap: 12px;
+    margin-bottom: 19px;
+  }
+  .box-hero-heading h2 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .box-hero-heading p {
+    font-size: 9px;
+  }
+  .box-guides > section > p {
+    font-size: 11px;
+  }
+  .box-guides .lol-items {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .box-guides .lol-items > span {
+    width: 33px;
+    height: 33px;
+  }
+  .setup-body > aside {
+    width: 194px;
+    padding: 30px 22px;
+  }
+  .win-enrollment {
+    width: 720px;
+  }
+  .win-enrollment .enrollment-form {
+    padding: 26px;
+  }
+  .win-enrollment .enrollment-form > h2 {
+    font-size: 19px;
+  }
+  .ie9-tabs {
+    padding-left: 63px;
+  }
+  .ie9-tabs > span {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .windows-seven .desktop-shortcuts {
+    top: 8px;
+    left: 3px;
+    grid-template-rows: repeat(8, 76px);
+    gap: 1px 3px;
+  }
+  .windows-seven .desktop-shortcut {
+    width: 70px;
+    min-height: 74px;
+    font-size: 10px;
+    padding: 5px 2px;
+    gap: 4px;
+  }
+  .windows-seven .desktop-shortcut .app-icon.large {
+    width: 42px;
+    height: 42px;
+  }
+  .win-sticky-note {
+    left: 160px;
+    top: 30px;
+    width: 204px;
+    font-size: 12px;
+    padding: 0 13px 12px;
+  }
+  .win-sticky-note > div {
+    margin: 0 -13px;
+  }
+  .win-sticky-note > p {
+    font-size: 13px;
+  }
+  .win-sticky-note dl {
+    font-size: 11px;
+    grid-template-columns: 44px 1fr;
+  }
+  .win-sticky-note footer button {
+    font-size: 11px;
+  }
+  .win-clock-gadget {
+    display: none;
+  }
+  .aero-window,
+  .aero-window.window-chat:not(.conversation-window) {
+    left: 6px !important;
+    right: auto !important;
+    top: 12px !important;
+    width: calc(100vw - 12px) !important;
+    height: calc(100dvh - 64px) !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+  .aero-window.maximized {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: calc(100dvh - 40px) !important;
+  }
+  .window-titlebar {
+    font-size: 11px;
+  }
+  .window-titlebar > span {
+    max-width: calc(100% - 115px);
+  }
+  .taskbar-app {
+    width: 41px;
+    height: 38px;
+  }
+  .taskbar-app .app-icon {
+    width: 29px;
+    height: 29px;
+  }
+  .taskbar-apps {
+    gap: 2px;
+    overflow: auto;
+  }
+  .taskbar-app:nth-child(n + 6) {
+    display: none;
+  }
+  .system-tray {
+    padding-left: 5px;
+    gap: 2px;
+  }
+  .system-tray > button.input-language {
+    display: block !important;
+    font-size: 10px;
+  }
+  .system-tray > button.win-network {
+    display: none !important;
+  }
+  .system-tray > button[title='扬声器'] {
+    display: block !important;
+  }
+  .system-tray > button[title='扬声器'] svg {
+    width: 12px;
+  }
+  .taskbar-clock {
+    width: 72px;
+    font-size: 9px;
+  }
+  .taskbar-clock b {
+    font-size: 10px;
+  }
+  .start-orb {
+    width: 47px;
+  }
+  .start-orb > span {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+  .show-desktop {
+    width: 10px;
+  }
+  .start-menu {
+    width: min(412px, 100vw);
+    min-height: 480px;
+    bottom: 40px;
+    padding: 6px;
+  }
+  .start-apps {
+    width: 61%;
+  }
+  .start-program-list {
+    max-height: 405px;
+  }
+  .start-program-list > button {
+    min-height: 41px;
+    font-size: 11px;
+    padding: 6px;
+  }
+  .start-program-list .app-icon {
+    width: 29px;
+    height: 29px;
+  }
+  .start-right {
+    min-width: 0;
+    padding: 16px 7px 5px 11px;
+    flex: 1;
+  }
+  .start-right > button {
+    font-size: 11px;
+    padding: 8px 4px;
+  }
+  .start-shutdown button {
+    font-size: 11px;
+    padding: 6px 13px;
+  }
+  .start-shutdown button + button {
+    font-size: 9px;
+    padding: 7px 5px;
+  }
+  .start-search input {
+    font-size: 10px;
+  }
+  .all-programs {
+    font-size: 11px;
+  }
+  .qq-main-panel .contact {
+    min-height: 55px;
+    padding: 7px 12px;
+  }
+  .qq-main-panel .contact .avatar {
+    width: 39px !important;
+    height: 39px !important;
+  }
+  .qq-main-panel .contact b {
+    font-size: 13px;
+  }
+  .qq-main-panel .contact small {
+    font-size: 11px;
+    width: 255px;
+  }
+  .qq-profile {
+    height: 91px;
+    min-height: 91px;
+    padding: 14px 12px;
+    gap: 12px;
+  }
+  .qq-profile strong {
+    font-size: 14px;
+  }
+  .qq-profile > div > small {
+    max-width: 230px;
+    font-size: 12px;
+  }
+  .qq-profile .avatar {
+    width: 53px !important;
+    height: 53px !important;
+  }
+  .qq-weather {
+    right: 17px;
+    top: 11px;
+  }
+  .qq-shortcuts {
+    padding: 0 12px 7px;
+    height: 29px;
+    min-height: 29px;
+    gap: 16px;
+  }
+  .qq-search {
+    padding: 4px 8px 6px;
+  }
+  .qq-search > input {
+    height: 28px;
+    font-size: 12px;
+  }
+  .qq-contact-tabs {
+    height: 38px;
+  }
+  .qq-contact-tabs svg {
+    width: 21px;
+  }
+  .qq-group-heading {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+  .qq-service-icons {
+    height: 34px;
+    gap: 16px;
+    padding: 7px 13px;
+  }
+  .qq-main-footer {
+    min-height: 30px;
+    font-size: 12px;
+    padding: 7px 11px;
+  }
+  .qq-main-footer > button {
+    font-size: 12px;
+  }
+  .qq-chat-aside {
+    display: none;
+  }
+  .qq-dialog-profile {
+    padding: 10px 12px;
+    min-height: 69px;
+  }
+  .qq-dialog-profile h3 {
+    font-size: 15px;
+  }
+  .qq-dialog-profile small {
+    font-size: 10px;
+    max-width: 250px;
+  }
+  .qq-chat-tools {
+    gap: 20px;
+    padding: 7px 14px;
+  }
+  .qq-chat-tools > button > span {
+    font-size: 10px;
+  }
+  .app-chat .message-bubble,
+  .app-chat .message.outgoing .message-bubble {
+    font-size: 13px;
+  }
+  .app-chat .message-meta {
+    font-size: 12px;
+  }
+  .app-chat .message-meta small {
+    font-size: 10px;
+  }
+  .app-chat .message-expiry {
+    font-size: 9px;
+  }
+  .app-chat .chat-compose {
+    min-height: 125px;
+  }
+  .app-chat .chat-compose textarea {
+    font-size: 13px;
+    height: 90px;
+  }
+  .qq-format-toolbar {
+    gap: 10px;
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+  .qq-format-toolbar button {
+    font-size: 10px;
+  }
+  .app-chat .chat-compose small {
+    font-size: 8px;
+  }
+  .app-chat .chat-compose .button {
+    font-size: 11px;
+    padding: 5px 11px;
+  }
+  .conversation-window .qq-chat-aside:has(.qq-relation-details) {
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 132px;
+    bottom: 24px;
+    z-index: 10;
+    width: 192px;
+    background: #f2faff;
+    box-shadow: -5px 0 20px #153a5c33;
+  }
+  .qq-relation-details p {
+    font-size: 11px;
+  }
+  .qq-relation-details .social-buttons .button {
+    font-size: 11px;
+  }
+  .qq-relation-details .social-buttons small {
+    font-size: 9px;
+  }
+  .ie9-navigation {
+    gap: 4px;
+    padding: 4px 6px;
+    height: 36px;
+  }
+  .ie9-navigation > .ie-back {
+    width: 28px;
+    height: 28px;
+    font-size: 22px;
+  }
+  .ie9-navigation > .ie-forward {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+  }
+  .ie9-navigation > button:last-child {
+    display: none;
+  }
+  .ie9-navigation form {
+    height: 25px;
+    padding: 0 4px;
+  }
+  .ie9-navigation form > .app-icon {
+    width: 13px;
+    height: 13px;
+  }
+  .ie9-navigation input {
+    font-size: 10px;
+  }
+  .ie9-navigation form > button {
+    font-size: 15px;
+  }
+  .ie9-tabs {
+    padding-left: 60px;
+    height: 26px;
+  }
+  .ie9-tabs > div {
+    font-size: 10px;
+    min-width: 200px;
+    max-width: calc(100% - 32px);
+    height: 25px;
+    padding: 4px 7px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .ie9-tabs > div > span {
+    font-size: 14px;
+  }
+  .ie9-tabs > button {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+  .renren-bluebar {
+    gap: 15px;
+    padding: 0 10px;
+    height: 39px;
+  }
+  .renren-logo {
+    font-size: 20px;
+    gap: 3px;
+  }
+  .renren-logo .app-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .renren-top-search {
+    display: none;
+  }
+  .renren-bluebar > button {
+    font-size: 11px;
+  }
+  .renren-bluebar > button:last-child {
+    margin-left: auto;
+  }
+  .renren-layout {
+    display: block;
+    padding: 14px 13px 20px;
+    min-height: 0;
+  }
+  .renren-left {
+    border: 0;
+    border-bottom: 1px solid #d5e2ee;
+    padding: 0;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .renren-profile {
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+  .renren-profile .avatar {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .renren-profile b {
+    font-size: 11px;
+  }
+  .renren-profile button {
+    font-size: 8px;
+    white-space: nowrap;
+    padding: 5px 0;
+  }
+  .renren-profile small {
+    display: none;
+  }
+  .renren-left nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    border: 0;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .renren-left nav > button {
+    font-size: 10px;
+    padding: 6px;
+    gap: 3px;
+  }
+  .renren-left nav > button > svg {
+    width: 11px;
+    height: 11px;
+  }
+  .renren-left > h4,
+  .renren-left > button,
+  .renren-left > p,
+  .renren-radio {
+    display: none;
+  }
+  .renren-welcome {
+    font-size: 12px;
+    gap: 9px;
+    margin-bottom: 13px;
+  }
+  .renren-welcome > span {
+    font-size: 9px;
+  }
+  .renren-publisher {
+    padding: 0 9px 9px;
+    margin-bottom: 16px;
+  }
+  .renren-publish-types {
+    font-size: 11px;
+    gap: 17px;
+    padding: 9px 0;
+  }
+  .renren-publish-types > b {
+    font-size: 11px;
+  }
+  .renren-publish-types > button {
+    font-size: 10px;
+  }
+  .renren-publisher textarea {
+    font-size: 11px;
+    height: 65px;
+    padding: 8px;
+  }
+  .renren-publisher > div:last-child > span {
+    font-size: 9px;
+  }
+  .renren-publisher .button {
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+  .renren-feed-tabs {
+    gap: 21px;
+  }
+  .renren-feed-tabs > button {
+    font-size: 11px;
+  }
+  .renren-feed-tabs > small {
+    font-size: 8px;
+  }
+  .renren-post {
+    padding: 15px 0;
+    gap: 9px;
+  }
+  .renren-post > .avatar {
+    width: 35px;
+    height: 35px;
+  }
+  .renren-post header > button {
+    font-size: 11px;
+  }
+  .renren-post header > span {
+    font-size: 10px;
+  }
+  .renren-post > div > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .renren-post footer {
+    font-size: 10px;
+    gap: 11px;
+  }
+  .renren-post footer > small {
+    font-size: 9px;
+  }
+  .renren-post footer > button {
+    font-size: 10px;
+  }
+  .renren-campus-poster {
+    padding: 16px;
+  }
+  .renren-campus-poster > strong {
+    font-size: 25px;
+    letter-spacing: 4px;
+  }
+  .renren-campus-poster > span {
+    font-size: 10px;
+  }
+  .renren-campus-poster > small {
+    font-size: 9px;
+  }
+  .renren-comments p {
+    font-size: 10px;
+  }
+  .renren-friends {
+    grid-template-columns: 1fr;
+  }
+  .qzone-top {
+    gap: 13px;
+    padding: 0 11px;
+    height: 31px;
+  }
+  .qzone-top > b {
+    font-size: 12px;
+    margin-left: -9px;
+  }
+  .qzone-top > button {
+    font-size: 10px;
+  }
+  .qzone-top > .app-icon {
+    width: 17px;
+    height: 17px;
+  }
+  .qzone-top > button.push-right {
+    display: none;
+  }
+  .qzone-cover {
+    height: 190px;
+    padding: 21px 20px;
+  }
+  .qzone-cover h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  .qzone-cover > p {
+    font-size: 10px;
+    max-width: 220px;
+    line-height: 1.8;
+    margin-top: 9px;
+  }
+  .qzone-url {
+    font-size: 7px;
+    margin-top: 7px;
+  }
+  .qzone-decorate {
+    font-size: 9px;
+    padding: 5px 7px;
+    right: 14px;
+    top: 17px;
+  }
+  .qzone-user {
+    left: 19px;
+    bottom: 15px;
+    gap: 10px;
+  }
+  .qzone-user > .avatar {
+    width: 57px !important;
+    height: 57px !important;
+  }
+  .qzone-user b {
+    font-size: 15px;
+  }
+  .qzone-user p {
+    font-size: 10px;
+    max-width: 240px;
+    line-height: 1.7;
+    margin-top: 7px;
+  }
+  .qzone-user small {
+    font-size: 9px;
+    margin-top: 7px;
+  }
+  .qzone-tabs {
+    padding: 0 7px;
+    min-height: 33px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .qzone-tabs > button {
+    font-size: 11px;
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+  .qzone-layout {
+    display: block;
+    padding: 14px 12px;
+  }
+  .qzone-sidebar {
+    display: none;
+  }
+  .qzone-module {
+    padding: 12px;
+    font-size: 12px;
+  }
+  .qzone-module > h3 {
+    font-size: 12px;
+  }
+  .qzone-publisher textarea {
+    font-size: 12px;
+    min-height: 67px;
+  }
+  .qzone-publisher > div > span {
+    font-size: 9px;
+  }
+  .qzone-publisher .button {
+    font-size: 11px;
+  }
+  .qzone-post > header b {
+    font-size: 12px;
+  }
+  .qzone-post > header small {
+    font-size: 9px;
+  }
+  .qzone-post > p {
+    font-size: 12px;
+  }
+  .qzone-module > p {
+    font-size: 12px;
+  }
+  .qzone-empty {
+    font-size: 11px !important;
+  }
+  .qzone-friend-list {
+    grid-template-columns: 1fr;
+  }
+  .qzone-cover:after {
+    right: -300px;
+  }
+  .qzone-photo-scene {
+    height: 90px;
+  }
+  .qzone-bottom {
+    font-size: 8px;
+  }
+  .lol-client-header {
+    height: 67px;
+    min-height: 67px;
+    gap: 10px;
+    padding: 6px 10px;
+  }
+  .lol-home-logo {
+    width: 93px;
+  }
+  .lol-wordmark b:first-child,
+  .lol-wordmark b:nth-of-type(2) {
+    font-size: 18px;
+  }
+  .lol-wordmark small {
+    font-size: 6px;
+  }
+  .lol-wordmark em {
+    font-size: 8px;
+    letter-spacing: 4px;
+  }
+  .lol-play {
+    width: 101px;
+    height: 46px;
+    font-size: 24px;
+    border-width: 1px;
+  }
+  .lol-play > span {
+    font-size: 7px;
+    margin-top: 3px;
+  }
+  .lol-summoner {
+    padding: 0;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+  }
+  .lol-summoner > .hero-portrait {
+    width: 31px;
+    height: 31px;
+  }
+  .lol-summoner > div {
+    min-width: 0;
+    flex: 1;
+  }
+  .lol-summoner b {
+    font-size: 9px;
+    padding: 4px 5px;
+    max-width: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .lol-summoner > div > span {
+    font-size: 7px;
+    margin: 4px 0;
+  }
+  .lol-client-tabs {
+    min-height: 31px;
+    padding: 0 4px;
+  }
+  .lol-client-tabs > button {
+    font-size: 10px;
+    padding: 9px 10px;
+  }
+  .lol-client-tabs > .lol-box-shortcut {
+    font-size: 8px;
+    padding: 8px 7px;
+  }
+  .lol-client-body {
+    padding: 9px;
+  }
+  .lol-lobby {
+    grid-template-columns: 80px minmax(210px, 1fr);
+    gap: 9px;
+  }
+  .lol-lobby h3 {
+    font-size: 9px;
+    padding: 9px 6px;
+  }
+  .lol-free-heroes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px 5px;
+    padding: 9px 5px;
+  }
+  .lol-free-heroes .hero-portrait {
+    width: 28px;
+    height: 28px;
+  }
+  .lol-featured {
+    height: 200px;
+  }
+  .lol-featured > div {
+    left: 14px;
+    bottom: 18px;
+    right: 12px;
+  }
+  .lol-featured h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 13px 0 9px;
+  }
+  .lol-featured p {
+    font-size: 9px;
+    line-height: 1.9;
+    max-width: 155px;
+  }
+  .lol-featured span {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .lol-featured button {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  .lol-mode {
+    padding: 9px 5px;
+  }
+  .lol-mode img {
+    height: 52px;
+  }
+  .lol-mode b {
+    font-size: 10px;
+  }
+  .lol-mode small {
+    font-size: 7px;
+    line-height: 1.7;
+  }
+  .lol-rank-panel {
+    gap: 7px;
+    padding: 13px 0;
+  }
+  .lol-rank-panel svg {
+    width: 31px;
+  }
+  .lol-rank-panel strong {
+    font-size: 10px;
+  }
+  .lol-rank-panel b {
+    font-size: 22px;
+  }
+  .lol-rank-panel small {
+    font-size: 8px;
+  }
+  .lol-news {
+    margin-top: 9px;
+  }
+  .lol-news > h3 > span {
+    font-size: 7px;
+  }
+  .lol-news > article {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+  .lol-news > article .hero-portrait {
+    width: 29px;
+    height: 29px;
+  }
+  .lol-news > article button {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .lol-news > article p {
+    font-size: 9px;
+    line-height: 1.9;
+  }
+  .lol-lobby-right {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .lol-lobby-right > section {
+    min-width: 180px;
+  }
+  .lol-profile-summary {
+    gap: 8px;
+    padding: 11px;
+  }
+  .lol-profile-summary > b {
+    font-size: 10px;
+  }
+  .lol-profile-summary > small {
+    font-size: 8px;
+  }
+  .lol-profile-summary > .hero-portrait {
+    width: 27px;
+    height: 27px;
+  }
+  .lol-lobby-right dl {
+    font-size: 8px;
+    padding: 0 10px 10px;
+    gap: 7px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lol-lobby-right dd {
+    font-size: 9px;
+  }
+  .lol-lobby-right .lol-last-result {
+    width: 100px;
+    min-width: 100px;
+    flex: 1;
+    padding: 14px 10px;
+  }
+  .lol-last-result > b {
+    font-size: 17px;
+  }
+  .lol-last-result > button {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .lol-client-status {
+    font-size: 7px;
+    padding: 6px 7px;
+    gap: 5px;
+  }
+  .lol-client-status > span:nth-child(2) {
+    font-size: 7px;
+  }
+  .lol-client-status > button {
+    font-size: 7px;
+    padding-left: 7px;
+  }
+  .lol-champion-select > h2 {
+    font-size: 11px;
+    padding: 9px 3px 13px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .lol-hero-search {
+    padding: 0 2px;
+    margin-bottom: 14px;
+  }
+  .lol-hero-search > input {
+    width: 150px;
+    font-size: 10px;
+    padding: 7px;
+  }
+  .lol-hero-search > span {
+    font-size: 9px;
+  }
+  .lol-hero-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px 6px;
+    padding: 2px;
+  }
+  .lol-hero-grid .hero-portrait {
+    width: 48px;
+    height: 48px;
+    border-width: 2px;
+  }
+  .lol-hero-grid strong {
+    font-size: 8px;
+    white-space: nowrap;
+  }
+  .lol-hero-grid small {
+    font-size: 7px;
+  }
+  .lol-role-select {
+    gap: 7px;
+    flex-wrap: wrap;
+    padding: 14px 3px;
+  }
+  .lol-role-select > span {
+    font-size: 10px;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  .lol-role-select > button {
+    flex: 1;
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+  .lol-selected-hero {
+    padding: 13px 10px;
+    gap: 11px;
+  }
+  .lol-selected-hero > .hero-portrait {
+    width: 47px;
+    height: 47px;
+  }
+  .lol-selected-hero h3 {
+    font-size: 12px;
+  }
+  .lol-selected-hero p {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+  .lol-selected-hero small {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .lol-select-columns > aside {
+    padding: 14px 6px;
+  }
+  .lol-party-member {
+    width: 170px;
+    padding: 9px 7px;
+    gap: 8px;
+  }
+  .lol-party-member .avatar {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .lol-party-member > span {
+    font-size: 11px;
+  }
+  .lol-party-member small {
+    font-size: 8px;
+  }
+  .lol-select-columns > aside > p {
+    font-size: 9px;
+    line-height: 1.9;
+  }
+  .lol-match-resources {
+    font-size: 9px;
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+  .lol-match-resources > span {
+    font-size: 9px;
+    gap: 7px;
+  }
+  .lol-match-resources b {
+    font-size: 9px;
+  }
+  .lol-select-columns > aside > .button {
+    width: 100%;
+    font-size: 13px;
+  }
+  .lol-select-columns > aside > small {
+    font-size: 9px;
+  }
+  .lol-select-columns > aside > .lol-cancel {
+    font-size: 10px;
+    margin: 4px auto;
+  }
+  .lol-queue-screen {
+    padding: 22px 15px;
+    min-height: 440px;
+  }
+  .lol-queue-screen h2 {
+    font-size: 23px;
+    line-height: 1.7;
+  }
+  .lol-queue-screen > p {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+  .lol-queue-player {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .lol-queue-player > span {
+    font-size: 11px;
+    margin-right: 10px;
+  }
+  .lol-queue-player small {
+    font-size: 9px;
+  }
+  .lol-battle-view {
+    min-width: 0;
+  }
+  .lol-match-score {
+    font-size: 10px;
+    gap: 9px;
+    padding: 8px 6px;
+  }
+  .lol-match-score > small {
+    font-size: 8px;
+    margin-left: 0;
+  }
+  .lol-match-score > time {
+    font-size: 9px;
+  }
+  .lol-tactical-map {
+    height: 389px;
+    min-height: 360px;
+  }
+  .lol-tactical-map > img {
+    object-fit: cover;
+    object-position: center;
+  }
+  .lol-battle-message {
+    font-size: 14px;
+    letter-spacing: 1px;
+    top: 15px;
+    padding: 0 10px;
+    line-height: 1.9;
+  }
+  .map-hero {
+    width: 24px;
+    height: 24px;
+  }
+  .lol-decision-panel {
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+    padding: 11px 12px;
+  }
+  .lol-decision-panel > div {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .lol-decision-panel > div > button {
+    min-height: 47px;
+    padding: 8px;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+  .lol-decision-panel strong {
+    font-size: 11px;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .lol-decision-panel small {
+    font-size: 9px;
+    line-height: 1.7;
+    flex: 1;
+  }
+  .lol-decision-panel h3 {
+    font-size: 12px;
+  }
+  .lol-decision-panel h3 > span {
+    font-size: 8px;
+  }
+  .lol-decision-panel > p {
+    font-size: 8px;
+    line-height: 1.8;
+    margin: 8px 0 10px;
+  }
+  .lol-game-hud {
+    min-height: 79px;
+    gap: 7px;
+    padding: 7px 8px;
+    flex-wrap: wrap;
+  }
+  .lol-hud-portrait {
+    width: 41px;
+    height: 41px;
+  }
+  .lol-hud-portrait > span {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  .lol-hud-bars {
+    width: 104px;
+  }
+  .lol-hud-bars > b {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+  .lol-hud-bars > span {
+    height: 8px;
+  }
+  .lol-hud-bars small {
+    font-size: 6px;
+  }
+  .lol-abilities {
+    gap: 3px;
+  }
+  .lol-abilities > div {
+    width: 25px;
+    height: 28px;
+  }
+  .lol-abilities b {
+    font-size: 8px;
+  }
+  .lol-abilities small {
+    font-size: 6px;
+  }
+  .lol-abilities > .summoner-spells {
+    width: 17px;
+    gap: 3px;
+    height: 28px;
+  }
+  .summoner-spells > span {
+    width: 16px;
+    height: 12px;
+    font-size: 7px;
+  }
+  .lol-mini-map {
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    display: none;
+  }
+  .lol-records,
+  .lol-personal-profile,
+  .lol-help,
+  .lol-champions-page {
+    padding: 13px 10px;
+  }
+  .lol-records > h2,
+  .lol-personal-profile > h2,
+  .lol-help > h2,
+  .lol-champions-page > h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  .lol-records > p {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+  .lol-match-record {
+    padding: 12px 9px;
+    gap: 10px;
+  }
+  .lol-match-record > .hero-portrait {
+    width: 34px;
+    height: 34px;
+  }
+  .lol-match-record strong {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  .lol-match-record p {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .lol-match-record small {
+    font-size: 8px;
+  }
+  .lol-match-record > b {
+    font-size: 19px;
+  }
+  .lol-help h3 {
+    font-size: 13px;
+  }
+  .lol-help p {
+    font-size: 11px;
+  }
+  .lol-champions-page .lol-hero-grid {
+    gap: 14px 6px;
+  }
+  .lol-hero-description {
+    padding: 14px;
+    gap: 12px;
+  }
+  .lol-hero-description > span {
+    min-width: 190px;
+  }
+  .lol-hero-description h2 {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .lol-hero-description p {
+    font-size: 10px;
+  }
+  .lol-hero-description small {
+    font-size: 9px;
+  }
+  .lol-profile-main {
+    gap: 16px;
+    padding: 16px;
+  }
+  .lol-profile-main > .hero-portrait {
+    width: 64px;
+    height: 64px;
+  }
+  .lol-profile-main > span > strong {
+    font-size: 18px;
+  }
+  .lol-profile-main small {
+    font-size: 9px;
+  }
+  .lol-profile-main b {
+    font-size: 14px;
+  }
+  .lol-profile-numbers {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px;
+    padding: 25px 0;
+  }
+  .lol-profile-numbers > div {
+    font-size: 10px;
+  }
+  .lol-profile-numbers b {
+    font-size: 24px;
+  }
+  .box-header {
+    padding: 12px;
+    gap: 10px;
+    min-height: 83px;
+    flex-wrap: wrap;
+  }
+  .box-header > .app-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .box-header > span > b {
+    font-size: 19px;
+    letter-spacing: 0;
+  }
+  .box-header small {
+    font-size: 8px;
+  }
+  .box-header form {
+    width: 100%;
+    margin-top: 6px;
+  }
+  .box-header form input {
+    flex: 1;
+    width: auto;
+    font-size: 11px;
+    padding: 7px;
+  }
+  .box-header form > button {
+    font-size: 11px;
+    padding: 6px 17px;
+  }
+  .box-tabs {
+    padding: 0 5px;
+    flex-wrap: wrap;
+  }
+  .box-tabs > button {
+    font-size: 10px;
+    padding: 11px 12px 9px;
+  }
+  .box-tabs > .box-launch {
+    font-size: 8px;
+    padding: 6px 7px;
+    margin-left: auto;
+  }
+  .box-body {
+    padding: 14px 12px;
+  }
+  .box-player {
+    padding: 14px 11px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .box-player > .hero-portrait {
+    width: 48px;
+    height: 48px;
+  }
+  .box-player h2 {
+    font-size: 15px;
+  }
+  .box-player h2 > span {
+    font-size: 9px;
+    margin-left: 8px;
+  }
+  .box-player p {
+    font-size: 9px;
+    margin-top: 8px;
+  }
+  .box-player p b {
+    font-size: 14px;
+    margin-right: 3px;
+  }
+  .box-player > aside {
+    padding: 5px 8px;
+  }
+  .box-player > aside > strong {
+    font-size: 23px;
+  }
+  .box-player > aside > small {
+    font-size: 8px;
+    line-height: 1.6;
+  }
+  .box-player > div > small {
+    font-size: 8px;
+    margin-top: 8px;
+  }
+  .box-data-tabs {
+    gap: 13px;
+  }
+  .box-data-tabs > b {
+    font-size: 12px;
+  }
+  .box-data-tabs > span {
+    font-size: 10px;
+  }
+  .box-data-tabs > button {
+    font-size: 10px;
+  }
+  .box-record-list > article {
+    padding: 12px 8px;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .box-record-list .hero-portrait {
+    width: 33px;
+    height: 33px;
+  }
+  .box-result {
+    min-width: 34px;
+    font-size: 14px;
+  }
+  .box-result > small {
+    font-size: 8px;
+  }
+  .box-record-list b {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .box-record-list p {
+    font-size: 9px;
+  }
+  .box-record-list > article > div > small {
+    font-size: 8px;
+  }
+  .box-record-list strong {
+    font-size: 18px;
+  }
+  .box-empty {
+    padding: 43px 15px;
+  }
+  .box-empty h3 {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .box-empty p {
+    font-size: 11px;
+  }
+  .box-guides {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .box-guides > aside {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid #bdcfdd;
+  }
+  .box-guides > aside > button {
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 9px 2px;
+    gap: 6px;
+    border-right: 1px solid #e4ebf0;
+    white-space: nowrap;
+  }
+  .box-guides > aside .hero-portrait {
+    width: 32px;
+    height: 32px;
+  }
+  .box-guides > section {
+    padding: 17px;
+  }
+  .box-hero-heading {
+    gap: 13px;
+  }
+  .box-hero-heading > .hero-portrait {
+    width: 53px;
+    height: 53px;
+  }
+  .box-hero-heading h2 {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .box-hero-heading p {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .box-guides h3 {
+    font-size: 12px;
+  }
+  .box-guides > section > p {
+    font-size: 11px;
+  }
+  .box-guides .lol-items > span {
+    width: 37px;
+    height: 37px;
+  }
+  .box-settings {
+    padding: 22px 17px;
+  }
+  .box-settings h2 {
+    font-size: 18px;
+  }
+  .box-settings > label {
+    font-size: 12px;
+  }
+  .box-settings > p {
+    font-size: 11px;
+  }
+  .box-footer {
+    font-size: 8px;
+  }
+  .box-footer > button {
+    font-size: 9px;
+  }
+  .win-enrollment {
+    width: calc(100vw - 20px);
+    padding: 0 5px 5px;
+    max-height: 96dvh;
+    overflow: auto;
+    display: block;
+  }
+  .setup-title {
+    font-size: 11px;
+    height: 28px;
+  }
+  .setup-body {
+    display: block;
+    min-height: 0;
+  }
+  .setup-body > aside {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 18px 21px;
+    background: linear-gradient(120deg, #265586, #76a1c5);
+  }
+  .setup-body > aside > .app-icon {
+    width: 47px;
+    height: 47px;
+  }
+  .setup-body > aside > h2 {
+    font-size: 23px;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .setup-body > aside > h2 > br {
+    display: none;
+  }
+  .setup-body > aside > p {
+    margin-left: auto;
+    font-size: 9px;
+    line-height: 1.9;
+    text-align: right;
+    color: #d4e7f7;
+  }
+  .setup-body > aside > hr,
+  .setup-body > aside > span,
+  .setup-version {
+    display: none;
+  }
+  .win-enrollment .enrollment-form {
+    padding: 23px 21px 21px;
+  }
+  .win-enrollment .enrollment-form > h2 {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  .win-enrollment .enrollment-form > .muted {
+    font-size: 10px;
+    margin: 12px 0 20px;
+    line-height: 1.9;
+  }
+  .win-enrollment .form-row > label,
+  .win-enrollment .field-label,
+  .win-enrollment .seed-label {
+    font-size: 11px;
+  }
+  .win-enrollment .form-row {
+    gap: 13px;
+    margin-bottom: 17px;
+  }
+  .win-enrollment input,
+  .win-enrollment select {
+    font-size: 12px;
+    padding: 7px 8px;
+  }
+  .win-enrollment .major-option {
+    padding: 12px;
+    gap: 11px;
+  }
+  .win-enrollment .major-option strong {
+    font-size: 11px;
+  }
+  .win-enrollment .major-option small {
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .win-enrollment .seed-label > span {
+    font-size: 8px;
+  }
+  .setup-form-footer {
+    gap: 13px;
+    margin-top: 22px;
+    padding-top: 15px;
+  }
+  .setup-form-footer > small {
+    font-size: 8px;
+    max-width: 100px;
+  }
+  .win-enrollment .enroll-button.button {
+    font-size: 11px;
+    padding: 8px 10px;
+    min-height: 33px;
+  }
+  .win-shutdown-dialog {
+    padding: 0 6px 6px;
+    max-width: calc(100vw - 24px);
+  }
+  .shutdown-title {
+    font-size: 11px;
+  }
+  .shutdown-copy {
+    padding: 23px 19px 16px;
+    gap: 14px;
+  }
+  .shutdown-copy > svg {
+    width: 40px;
+    height: 40px;
+  }
+  .shutdown-copy h2 {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .shutdown-copy p {
+    font-size: 11px;
+  }
+  .win-shutdown-dialog .sleep-plan {
+    padding: 4px 19px 15px;
+  }
+  .win-shutdown-dialog .sleep-plan > b {
+    font-size: 11px;
+  }
+  .shutdown-note {
+    font-size: 9px;
+    padding: 0 19px 16px;
+  }
+  .win-shutdown-dialog .dialog-buttons {
+    padding: 10px 12px;
+  }
+  .win-shutdown-dialog .dialog-buttons .button {
+    font-size: 11px;
+    padding: 6px 11px;
+  }
+  .desktop-notification {
+    right: 24px;
+    bottom: 53px;
+    width: 282px;
+  }
+  .desktop-notification .notification-body {
+    font-size: 11px;
+  }
+  .desktop-notification > div {
+    font-size: 11px;
+  }
+  .app-chat > .action-feedback {
+    font-size: 8px;
+  }
+  .app-games > .action-feedback {
+    font-size: 8px;
+  }
+  .campus-sidebar nav > button {
+    font-size: 10px;
+  }
+  .campus-profile > span:not(.avatar):not(.tag) {
+    font-size: 8px;
+  }
+  .campus-columns .section-heading h2 {
+    font-size: 11px;
+  }
+  .agenda-entry strong,
+  .event-preview strong,
+  .friend-note strong {
+    font-size: 10px;
+  }
+  .campus-stats small {
+    font-size: 8px;
+  }
+  .welcome-banner p,
+  .welcome-date {
+    font-size: 9px;
+  }
+}
+.window-chat:not(.conversation-window) {
+  min-width: 260px;
+}
+.lol-box-hint {
+  position: absolute;
+  top: 53px;
+  left: 13px;
+  max-width: 300px;
+  font:
+    10px/1.8 '宋体',
+    sans-serif;
+  color: #d4c48b;
+  background: #071728ba;
+  border: 1px solid #6f704a8c;
+  padding: 6px 9px;
+  z-index: 3;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .lol-box-hint {
+    font-size: 8px;
+    max-width: 240px;
+    top: 60px;
+    left: 10px;
+    padding: 4px 7px;
+  }
+}

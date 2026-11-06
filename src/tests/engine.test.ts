@@ -12,6 +12,23 @@ import { NPCS, TOTAL_DAYS } from '../content/world';
 const fresh = (seed = '测试秋天') => createGame({ name: '测试同学', gender: '女', major: 'cs' }, seed);
 
 describe('统一随机数与存档', () => {
+  it('新英雄元数据可保存，缺少英雄字段的旧版对局仍然可恢复', () => {
+    const current = dispatch(fresh(), {
+      type: 'queue',
+      role: '中路',
+      hero: '法师',
+      party: true,
+      champion: 'Annie',
+    });
+    expect(deserialize(serialize(current)).match?.champion).toBe('Annie');
+    const legacy = structuredClone(current);
+    delete legacy.match!.champion;
+    delete legacy.runId;
+    const restored = deserialize(serialize(legacy));
+    expect(restored.match?.phase).toBe('queue');
+    expect(restored.match?.hero).toBe('法师');
+    expect(dispatch(restored, { type: 'wait', minutes: 20 }).match?.phase).toBe('ready');
+  });
   it('同种子、同操作完整复现，包括人物与课程', () => {
     const a = fresh();
     const b = fresh();

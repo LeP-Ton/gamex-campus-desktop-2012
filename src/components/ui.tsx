@@ -45,6 +45,7 @@ import type { AppId } from '../engine/types';
 import { useGame } from '../stores/gameStore';
 import { useDesktop } from '../stores/desktopStore';
 import { clockText, npcDef } from '../engine/helpers';
+import { PeriodIcon } from './desktop/PeriodIcon';
 
 export const ICONS: Record<string, LucideIcon> = {
   book: BookOpen,
@@ -113,22 +114,22 @@ export const APPS: Record<
     subtitle: '南川大学 · 个人主页',
   },
   chat: {
-    name: 'Q聊 · 即时通讯',
-    short: 'Q聊',
+    name: 'QQ2012',
+    short: '腾讯QQ',
     icon: 'chat',
     color: 'blue',
     subtitle: '总有一个人，等你上线',
   },
   forum: {
-    name: '南川 BBS',
-    short: '校园论坛',
+    name: '人人网 - Windows Internet Explorer',
+    short: '人人网',
     icon: 'users',
     color: 'orange',
     subtitle: '有温度的校园，正在发生的故事',
   },
   browser: {
-    name: '校园浏览器',
-    short: '浏览器',
+    name: '校园导航 - Windows Internet Explorer',
+    short: 'Internet Explorer',
     icon: 'globe',
     color: 'blue',
     subtitle: '校园导航 · 勤工助学',
@@ -148,8 +149,8 @@ export const APPS: Record<
     subtitle: '每天一点积累，未来无限可能',
   },
   games: {
-    name: '征途战场 · 游戏中心',
-    short: '游戏中心',
+    name: 'League of Legends',
+    short: '英雄联盟',
     icon: 'game',
     color: 'purple',
     subtitle: '属于我们的征途，现在开始',
@@ -183,19 +184,34 @@ export const APPS: Record<
     subtitle: '每一种大学生活，都值得被记录',
   },
   settings: {
-    name: '系统设置',
-    short: '系统设置',
+    name: '控制面板',
+    short: '控制面板',
     icon: 'settings',
     color: 'gray',
     subtitle: '存档、种子与游戏帮助',
   },
+  qzone: {
+    name: 'QQ空间 - Windows Internet Explorer',
+    short: 'QQ空间',
+    icon: 'sparkles',
+    color: 'gold',
+    subtitle: '分享生活，留住感动',
+  },
+  gamebox: {
+    name: '多玩英雄联盟盒子',
+    short: '英雄联盟盒子',
+    icon: 'game',
+    color: 'orange',
+    subtitle: '战绩查询 · 英雄攻略',
+  },
+  recycle: { name: '回收站', short: '回收站', icon: 'folder', color: 'gray', subtitle: '回收站为空' },
 };
 
 export function AppIcon({ app, size = 'medium' }: { app: AppId; size?: 'small' | 'medium' | 'large' }) {
   const a = APPS[app];
   return (
     <span className={`app-icon ${a.color} ${size}`}>
-      <Icon name={a.icon} size={size === 'large' ? 31 : size === 'small' ? 17 : 23} />
+      <PeriodIcon app={app} />
     </span>
   );
 }
@@ -205,9 +221,26 @@ export function Avatar({ id, size = 38, name }: { id: string; size?: number; nam
   return (
     <span
       className="avatar"
+      title={name ?? def?.name ?? text}
       style={{ width: size, height: size, fontSize: size * 0.39, background: def?.color ?? '#5a8ba5' }}
     >
-      {text}
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" fill={def?.color ?? '#78a6c8'} />
+        <circle cx="37" cy="10" r="9" fill="#ffffff33" />
+        <path
+          d="M4 48q2-19 20-18 18-1 20 18"
+          fill={['muwan', 'xiaoyu'].includes(id) ? '#e3a1ae' : '#507796'}
+        />
+        <path d="M19 28h10v9q-5 6-10 0" fill="#e2b68d" />
+        <ellipse cx="24" cy="21" rx="12" ry="15" fill="#f7d7ae" />
+        <path d="M12 23Q4 2 22 3q21-4 15 25l-6-15-5 5-9-7z" fill={id === 'wei' ? '#6c4727' : '#343b43'} />
+        {['muwan', 'xiaoyu'].includes(id) && (
+          <path d="M13 17 9 41l7-2 1-13m17-11 5 27-8-3 1-15" fill="#343b43" />
+        )}
+        <path d="M17 23h3m8 0h3" stroke="#423b36" strokeWidth="2" strokeLinecap="round" />
+        <path d="M21 29q3 3 6 0" stroke="#ba7b62" strokeWidth="1.4" fill="none" />
+        {id === 'zhou' && <path d="M14 21h9v6h-9zm12 0h9v6h-9zm-3 2h3" stroke="#4e5861" fill="none" />}
+      </svg>
     </span>
   );
 }

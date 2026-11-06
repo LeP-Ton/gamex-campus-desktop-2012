@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Maximize2, Minus, X, Copy } from 'lucide-react';
 import { useDesktop, type WindowState } from '../../stores/desktopStore';
 import { APPS, AppIcon } from '../ui';
+import { npcDef } from '../../engine/helpers';
 import { Apps } from '../apps/Apps';
 
 export function Window({ win }: { win: WindowState }) {
@@ -10,7 +11,7 @@ export function Window({ win }: { win: WindowState }) {
   if (win.minimized) return null;
   return (
     <section
-      className={`aero-window ${win.maximized ? 'maximized' : ''} ${win.app === 'games' ? 'game-window' : ''}`}
+      className={`aero-window window-${win.app} ${win.npc ? 'conversation-window' : ''} ${win.z !== desktop.topZ ? 'inactive' : ''} ${win.maximized ? 'maximized' : ''} ${win.app === 'games' ? 'game-window' : ''}`}
       style={{ left: win.x, top: win.y, width: win.width, height: win.height, zIndex: win.z }}
       aria-label={APPS[win.app].name}
       onPointerDown={() => desktop.focus(win.key)}
@@ -41,8 +42,9 @@ export function Window({ win }: { win: WindowState }) {
       >
         <AppIcon app={win.app} size="small" />
         <span>
-          {APPS[win.app].name}
-          {win.npc ? ' · 独立会话' : ''}
+          {win.app === 'chat' && win.npc
+            ? `${npcDef(win.npc)?.name ?? '2012 级新生班'} - 聊天中`
+            : APPS[win.app].name}
         </span>
         <div className="window-controls">
           <button aria-label={`最小化${APPS[win.app].short}`} onClick={() => desktop.minimize(win.key)}>
@@ -80,7 +82,7 @@ export function Window({ win }: { win: WindowState }) {
               desktop.resize(
                 win.key,
                 Math.max(
-                  Math.min(540, window.innerWidth - 24),
+                  Math.min(win.app === 'chat' && !win.npc ? 260 : 540, window.innerWidth - 24),
                   Math.min(window.innerWidth - win.x, width + event.clientX - sx),
                 ),
                 Math.max(350, Math.min(window.innerHeight - win.y - 54, height + event.clientY - sy)),

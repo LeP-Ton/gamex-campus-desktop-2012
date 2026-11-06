@@ -2,7 +2,7 @@
 
 ## 项目定位
 
-GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React 18、TypeScript、Vite、Zustand，原创 Aero 桌面外观。浏览器 localStorage 保存完整状态，无服务端或外部模型依赖。
+GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React 18、TypeScript、Vite、Zustand，以 Windows 7 和 2012 年真实软件为视觉基准。浏览器 localStorage 保存完整状态，无服务端或外部模型依赖。
 
 ## 开发约定
 
@@ -12,7 +12,9 @@ GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React
 - 引擎只接收状态和指令，不读取 DOM、localStorage、系统时间或 Math.random；所有世界随机性使用持久化的统一伪随机数状态。
 - 所有活动、后台匹配、消息期限和 NPC 日程使用引擎中的同一分钟时钟。现实时间只用于存档元数据。
 - UI 调用 store 指令，内容放在 `src/content`，规则放在 `src/engine` 与 `src/systems`；扩展学期时保留存档版本迁移入口。
-- 图标和壁纸使用原创 SVG/CSS 与通用线性图标，不使用第三方游戏素材。
+- 桌面与应用按 2012 年真实软件还原：Windows 7、QQ2012、QQ空间、人人网、英雄联盟旧客户端和多玩盒子。不要替换成现代统一卡片设计。
+- 历史图像与游戏资源保存在 `public/period-assets`，来源记录在 `docs/2012界面参考与素材.md`。运行时不加载第三方 CDN，新增资源需纳入生产离线缓存。
+- `src/components/apps/PeriodSocial.tsx`、`PeriodGames.tsx` 与 `src/period.css` 管理历史软件界面；已有游戏规则与存档兼容性保持独立。
 
 ## 目录与运行
 

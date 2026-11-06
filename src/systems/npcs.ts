@@ -108,7 +108,7 @@ export function npcDay(s: GameState) {
     s.posts.push({
       id: s.nextId++,
       author: n.id,
-      category: '校园日常',
+      category: s.day % 8 === 0 ? '空间说说' : '校园日常',
       text,
       day: s.day,
       likes: Math.floor(random(s) * 20),

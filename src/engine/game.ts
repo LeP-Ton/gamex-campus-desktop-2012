@@ -157,7 +157,7 @@ export function createGame(profile: Profile, seed: string): GameState {
       id: s.nextId++,
       author: 'haoran',
       category: '游戏专区',
-      text: '302 寝室电脑全部就位！征途战场缺一位队友，新人也欢迎，一起从青铜打起。',
+      text: '302 寝室电脑全部就位！英雄联盟缺一位队友，新人也欢迎，一起从青铜打起。',
       day: 0,
       likes: 8,
       liked: false,
@@ -688,6 +688,7 @@ export function dispatch(input: GameState, command: Command): GameState {
       }
       if (!spend(s, 5, 2)) break;
       s.match = {
+        champion: command.champion,
         phase: 'queue',
         readyAt: s.minute + 20,
         role: command.role,

@@ -38,6 +38,9 @@ const validApps = [
   'grades',
   'rankings',
   'settings',
+  'qzone',
+  'gamebox',
+  'recycle',
 ];
 
 /** 外部导入和本地读取共用校验，不用损坏的文件覆盖当前游戏。 */

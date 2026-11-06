@@ -11,7 +11,10 @@ export type AppId =
   | 'diary'
   | 'grades'
   | 'rankings'
-  | 'settings';
+  | 'settings'
+  | 'qzone'
+  | 'gamebox'
+  | 'recycle';
 export type Activity = 'study' | 'gaming' | 'social' | 'work' | 'rest';
 export type RelationshipStage = '初识' | '朋友' | '暧昧' | '交往' | '分手';
 
@@ -128,6 +131,7 @@ export interface Notice {
   app: AppId;
 }
 export interface MatchState {
+  champion?: string;
   phase: 'queue' | 'ready' | 'lane' | 'objective' | 'fight';
   readyAt: number;
   role: string;
@@ -137,6 +141,7 @@ export interface MatchState {
   choices: string[];
 }
 export interface MatchRecord {
+  champion?: string;
   day: number;
   win: boolean;
   change: number;
@@ -316,7 +321,7 @@ export type Command =
   | { type: 'social'; npc: string; kind: 'walk' | 'coffee' | 'date' | 'confess' | 'breakup' }
   | { type: 'work'; job: string }
   | { type: 'rest'; kind: 'nap' | 'meal' | 'walk' }
-  | { type: 'queue'; role: string; hero: string; party: boolean }
+  | { type: 'queue'; role: string; hero: string; party: boolean; champion?: string }
   | { type: 'match'; choice: string }
   | { type: 'cancelMatch' }
   | { type: 'event'; id: string; choice: string }
