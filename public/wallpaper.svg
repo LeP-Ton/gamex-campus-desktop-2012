@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#325e82"/><stop offset=".5" stop-color="#85aeb9"/><stop offset="1" stop-color="#dae3ce"/></linearGradient>
+<linearGradient id="ground" x2="0" y2="1"><stop stop-color="#6f9a7e"/><stop offset="1" stop-color="#284f50"/></linearGradient>
+<linearGradient id="path" x2="0" y2="1"><stop stop-color="#c7c8b2"/><stop offset="1" stop-color="#8eaaa3"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#fff6d5" stop-opacity=".45"/><stop offset="1" stop-color="#fff6d5" stop-opacity="0"/></radialGradient>
+<linearGradient id="building" x2="0" y2="1"><stop stop-color="#c6d7d3"/><stop offset="1" stop-color="#91b0ae"/></linearGradient>
+<pattern id="windows" width="28" height="36" patternUnits="userSpaceOnUse"><rect width="11" height="22" x="9" y="7" fill="#496c75" opacity=".7"/><path d="M9 16h11m-5-9v22" stroke="#a7c8c8" stroke-width="1"/></pattern>
+<filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/><circle cx="1330" cy="330" r="530" fill="url(#light)"/>
+<g fill="#fff" opacity=".13" filter="url(#soft)"><ellipse cx="1180" cy="215" rx="280" ry="22"/><ellipse cx="1550" cy="310" rx="250" ry="18"/><ellipse cx="500" cy="170" rx="220" ry="15"/></g>
+<path d="M0 650Q220 420 450 605Q680 470 940 620Q1140 415 1410 570Q1720 380 1920 600V1080H0" fill="#658d91" opacity=".6"/>
+<path d="M0 765Q420 580 930 740Q1450 565 1920 750V1080H0" fill="url(#ground)"/>
+<g opacity=".95"><path d="M590 620h720v198H590z" fill="url(#building)"/><path d="M570 610h760v17H570z" fill="#738f91"/><path d="M650 655h600v130H650z" fill="url(#windows)"/>
+<path d="M850 573h200v244H850z" fill="#cbd8cd"/><path d="m825 578 125-67 125 67z" fill="#547784"/><path d="m865 568 85-44 85 44z" fill="#8da8ac"/>
+<path d="M892 631h116v186H892z" fill="#5f8183"/><path d="M906 644h18v173h-18m35-173h18v173h-18m35-173h18v173h-18" fill="#d9dfcc"/>
+<path d="M860 817h181v12H860m-17 12h215v12H843m-17 12h250v14H826" stroke="#bcc9bc" stroke-width="8"/><text x="950" y="610" font-size="16" text-anchor="middle" letter-spacing="12" fill="#426570" font-family="serif">南川大学</text></g>
+<path d="M910 850h90l520 230H360z" fill="url(#path)"/><path d="M938 850 780 1080m194-230 120 230" stroke="#dce2cc" stroke-width="2" opacity=".3"/>
+<g fill="#315e59"><path d="M0 640q100-175 190-50 95-155 200-60 105-90 170 35l-20 250H0z"/><path d="M1410 690q55-170 180-100 40-160 160-100 75-140 170-65v450h-510z"/></g>
+<g fill="#477a67"><circle cx="270" cy="610" r="98"/><circle cx="407" cy="630" r="78"/><circle cx="1510" cy="640" r="78"/><circle cx="1640" cy="584" r="96"/><circle cx="1790" cy="555" r="116"/></g>
+<g fill="#729577" opacity=".6"><ellipse cx="240" cy="550" rx="90" ry="43"/><ellipse cx="1630" cy="510" rx="87" ry="42"/><ellipse cx="1800" cy="460" rx="110" ry="55"/></g>
+<g stroke="#3c6260" stroke-width="12"><path d="M325 726v230m125-250v200m1010-183v250m168-280v300"/></g>
+<g fill="#537a68"><ellipse cx="325" cy="708" rx="100" ry="115"/><ellipse cx="450" cy="705" rx="70" ry="90"/><ellipse cx="1460" cy="723" rx="76" ry="105"/><ellipse cx="1628" cy="694" rx="94" ry="130"/></g>
+<g fill="#a8ad77" opacity=".45"><ellipse cx="292" cy="659" rx="67" ry="52"/><ellipse cx="1440" cy="674" rx="57" ry="52"/><ellipse cx="1604" cy="621" rx="70" ry="59"/></g>
+<g fill="#c4d2bf" opacity=".8"><path d="M593 784v141h6V784zm-8 0h22l-4-35h-14zM1320 784v141h6V784zm-8 0h22l-4-35h-14z"/></g>
+<g fill="#f0d47b" opacity=".65"><path d="m1690 130 9 4-6 13-8-5zm45 160 12-2-1 15-9 1zM1500 352l8 5-7 9-8-4zM1680 425l10 3-4 14-10-4z"/></g>
+<path d="M0 980q200-80 450 100H0m1470 0q245-150 450-100v100" fill="#1d4548" opacity=".5"/>
+</svg>
