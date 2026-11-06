@@ -14,6 +14,7 @@ GameX 的离线校园生活模拟游戏，背景为 2012 年中国大学。React
 - UI 调用 store 指令，内容放在 `src/content`，规则放在 `src/engine` 与 `src/systems`；扩展学期时保留存档版本迁移入口。
 - 桌面与应用按 2012 年真实软件还原：Windows 7、QQ2012、QQ空间、人人网、英雄联盟旧客户端和多玩盒子。不要替换成现代统一卡片设计。
 - 历史图像与游戏资源保存在 `public/period-assets`，来源记录在 `docs/2012界面参考与素材.md`。运行时不加载第三方 CDN，新增资源需纳入生产离线缓存。
+- 真实软件和 Windows 系统图标直接使用原始资源，不以简化 SVG 或生成图代替；图标清单记录源地址、摘要和原生分辨率。ICO 按同尺寸最高色深提取，避免选到低色深兼容帧。
 - `src/components/apps/PeriodSocial.tsx`、`PeriodGames.tsx` 与 `src/period.css` 管理历史软件界面；已有游戏规则与存档兼容性保持独立。
 
 ## 目录与运行

@@ -29,14 +29,7 @@ const shortcuts: AppId[] = [
 const pinned: AppId[] = ['browser', 'files', 'chat', 'games', 'gamebox'];
 
 export function WindowsFlag() {
-  return (
-    <svg viewBox="0 0 44 44" aria-hidden="true">
-      <path d="M5 8q8-4 16-1v16q-9-3-16 1z" fill="#ed6b28" />
-      <path d="M24 8q8 3 16-1v16q-8 4-16 1z" fill="#8ac43e" />
-      <path d="M5 27q8-4 16-1v16q-9-3-16 1z" fill="#49a8e4" />
-      <path d="M24 27q8 3 16-1v16q-8 4-16 1z" fill="#f3d22e" />
-    </svg>
-  );
+  return <img src="/period-assets/icons/windows-orb.png" alt="" draggable={false} />;
 }
 
 export function Desktop() {
@@ -112,7 +105,14 @@ export function Desktop() {
           >
             <span className="shortcut-icon-wrap">
               <AppIcon app={app} size="large" />
-              {!['files', 'recycle'].includes(app) && <i>➚</i>}
+              {!['files', 'recycle'].includes(app) && (
+                <img
+                  className="shortcut-overlay"
+                  src="/period-assets/icons/shortcut-16.png"
+                  alt=""
+                  draggable={false}
+                />
+              )}
               {app === 'chat' && unread > 0 && <b className="unread-badge">{unread > 99 ? '99+' : unread}</b>}
             </span>
             <span>{APPS[app].short}</span>
@@ -315,10 +315,12 @@ export function Desktop() {
         </aside>
       )}
       <footer className="taskbar">
-        <button className="start-orb" aria-label="打开开始菜单" onClick={desktop.toggleStart}>
-          <span>
-            <WindowsFlag />
-          </span>
+        <button
+          className={`start-orb ${desktop.startMenu ? 'start-open' : ''}`}
+          aria-label="打开开始菜单"
+          onClick={desktop.toggleStart}
+        >
+          <span aria-hidden="true" />
         </button>
         <div className="taskbar-apps">
           {taskApps.map((app) => {

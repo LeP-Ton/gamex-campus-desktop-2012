@@ -211,7 +211,7 @@ export function AppIcon({ app, size = 'medium' }: { app: AppId; size?: 'small' |
   const a = APPS[app];
   return (
     <span className={`app-icon ${a.color} ${size}`}>
-      <PeriodIcon app={app} />
+      <PeriodIcon app={app} size={size} />
     </span>
   );
 }
